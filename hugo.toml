@@ -1,0 +1,25 @@
+baseURL = "https://aitrien.com/"
+languageCode = "en-us"
+title = "Your Name"
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  description = "Portfolio and writing."
+
+[menus]
+  [[menus.main]]
+    name = "Writing"
+    pageRef = "/posts"
+    weight = 10
+  [[menus.main]]
+    name = "Projects"
+    pageRef = "/projects"
+    weight = 20
+
+[markup.goldmark.renderer]
+  unsafe = false
+
+# Phase 2: uncomment to pull styles from brand-codex.
+# [module]
+#   [[module.imports]]
+#     path = "github.com/aitrien/brand-codex"
