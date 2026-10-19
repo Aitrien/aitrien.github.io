@@ -52,12 +52,13 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
-      # Hugo fetches github.com/aitrien/brand-codex at the version pinned in go.mod (through the Go module proxy)
-      # and checks it against go.sum. Warnings fail the build, as on pull requests.
+      # Hugo fetches github.com/aitrien/brand-codex at the version pinned in go.mod through the Go module proxy and
+      # checks it against go.sum. Warnings fail the build, as on pull requests.
       - name: Build
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
+          HUGO_MODULE_PROXY: https://proxy.golang.org   # fetch modules through the Go module proxy (Hugo defaults to direct git)
         run: hugo --gc --minify --panicOnWarning --baseURL "${{ steps.pages.outputs.base_url }}/"
 
       - uses: actions/upload-pages-artifact@v3

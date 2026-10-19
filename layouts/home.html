@@ -1,6 +1,5 @@
-{{- /* docs/templates.md, Home: statement and the specimen plate, selected work, recent writing, capabilities.
-       The statement stacks above the plate: brand-codex has no documented split layout for them yet
-       (proposed as a brand-codex addition). */ -}}
+{{- /* docs/templates.md, Home: the statement on the frost (inside the backdrop's top fade), selected work, recent
+       writing, capabilities. */ -}}
 {{ define "main" }}
 <div class="cx-container">
   <section class="cx-page-head" aria-labelledby="statement-title">
@@ -14,8 +13,6 @@
       <a class="cx-button" href="{{ (site.GetPage "/writing").RelPermalink }}">Read the writing</a>
     </div>
   </section>
-
-  {{ partial "plate.html" . }}
 
   {{- with (site.GetPage "/work").RegularPages.ByDate.Reverse }}
   <section class="cx-section" id="work" aria-labelledby="work-title">
@@ -56,10 +53,4 @@
   </section>
   {{- end }}
 </div>
-{{ end }}
-
-{{ define "scripts" }}
-{{- with resources.Get "brand-codex/plate.js" | minify | fingerprint }}
-<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" defer></script>
-{{- end }}
 {{ end }}

@@ -9,7 +9,7 @@ status: live
 tags: [hugo, design-systems, accessibility]
 hero:
   src: home.png
-  alt: The home page of aitrien.com, with its headline, two buttons and the contour plate below.
+  alt: The home page of aitrien.com, with its headline and two buttons over softly blurred contour lines, and the first project cards below.
   caption: The home page, built entirely from brand-codex components.
 draft: false
 ---
@@ -62,11 +62,11 @@ There is no filtering script. Each tag in the filter is a link to its term page,
 |---|---|
 | CSS files in the site repository | 0 |
 | Lighthouse accessibility, home and a post | 100 and 100 |
-| Lighthouse performance on mobile, home and a post | 97 and 99 |
+| Lighthouse performance on mobile, home and a post | 97 and 97 |
 | Requests to other hosts | 0 |
 | Page templates | 6 |
 {caption="Launch checks | Production build, measured before launch"}
 
 ## What I'd change
 
-I would build the home page split layout into brand-codex first. The statement and the plate stack for now, because the only split layout lives in the showcase's own styles, and copying it here would break the one rule.
+I would have prototyped the backdrop before the first release. It replaced the plate on the home page, moved the header controls to pills, and needed a new contrast check for text on the frost, all in brand-codex rather than here, which is exactly what the one rule is for.
