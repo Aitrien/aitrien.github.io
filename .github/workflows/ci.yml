@@ -45,6 +45,7 @@ jobs:
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
+          GOPROXY: https://proxy.golang.org   # modules come from the proxy only, never a direct git clone
         # On failure, the last lines of Hugo's output become annotations, so the reason shows on the pull request.
         run: |
           set -o pipefail
