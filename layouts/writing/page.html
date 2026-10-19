@@ -1,0 +1,19 @@
+{{- /* docs/templates.md, Blog post: back link, meta line, h1 and lede, TOC (three or more h2s) + prose with the
+       end mark, "Filed under" tags, pagination. */ -}}
+{{ define "main" }}
+<div class="cx-container">
+  <header class="cx-page-head">
+    {{ partial "back.html" (dict "href" (site.GetPage "/writing").RelPermalink "label" "All writing") }}
+    {{ partial "accession/id.html" . }}
+    <h1>{{ .Title }}</h1>
+    <p class="cx-lede">{{ .Summary | plainify }}</p>
+  </header>
+  <div class="cx-stack">
+    {{ partial "article.html" (dict "page" . "toc" "auto") }}
+    {{- with .GetTerms "tags" }}
+    {{ partial "filed-under.html" $ }}
+    {{- end }}
+    {{ partial "pagination.html" (dict "page" . "label" "Post navigation" "noun" "Post") }}
+  </div>
+</div>
+{{ end }}

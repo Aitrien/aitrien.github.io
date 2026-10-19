@@ -1,0 +1,26 @@
+{{- /* docs/templates.md, 404: sprout ornament, accession label "No. — / Not in collection", h1, the requested path
+       in mono, three routes out. GitHub Pages serves one static 404 page, so the path is filled in by script; without
+       JavaScript the line stays hidden rather than showing an empty or wrong path. */ -}}
+{{ define "main" }}
+<div class="cx-container">
+  <header class="cx-page-head">
+    <span class="cx-ornament cx-ornament--lg" aria-hidden="true">f</span>
+    <dl class="cx-label" aria-label="Accession label">
+      <div class="cx-label__id"><dt>No.</dt><dd>—</dd></div>
+      <div><dt>Status</dt><dd>Not in collection</dd></div>
+    </dl>
+    <h1>Page not found</h1>
+    <p class="cx-meta" data-requested-path hidden></p>
+    <p class="cx-lede">Nothing is filed at this address. Try one of these instead.</p>
+    <div class="cx-actions">
+      <a class="cx-button cx-button--primary" href="{{ site.Home.RelPermalink }}">Home</a>
+      <a class="cx-button" href="{{ (site.GetPage "/work").RelPermalink }}">Work</a>
+      <a class="cx-button" href="{{ (site.GetPage "/writing").RelPermalink }}">Writing</a>
+    </div>
+  </header>
+</div>
+{{ end }}
+
+{{ define "scripts" }}
+<script>(function(){var p=document.querySelector('[data-requested-path]');if(!p)return;p.textContent=location.pathname;p.hidden=false;})();</script>
+{{ end }}

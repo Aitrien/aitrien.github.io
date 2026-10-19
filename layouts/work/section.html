@@ -1,0 +1,20 @@
+{{- /* docs/templates.md, Project index: page head (h1, entry count, intro), tag filter, cards newest first.
+       Card titles are h2 here, the level that fits this page's outline (project-card.md). */ -}}
+{{ define "main" }}
+{{- $entries := .RegularPages.ByDate.Reverse -}}
+<div class="cx-container">
+  <header class="cx-page-head">
+    <h1>{{ .Title }}</h1>
+    <p class="cx-meta">{{ len $entries }} {{ cond (eq (len $entries) 1) "entry" "entries" }}</p>
+    {{- with .Params.intro }}
+    <p class="cx-lede">{{ . }}</p>
+    {{- end }}
+    {{ partial "tag-filter.html" (dict "section" "work" "current" nil) }}
+  </header>
+  <ul class="cx-cards">
+    {{- range $entries }}
+    <li>{{ partial "card.html" (dict "page" . "level" 2) }}</li>
+    {{- end }}
+  </ul>
+</div>
+{{ end }}

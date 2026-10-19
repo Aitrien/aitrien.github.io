@@ -1,0 +1,17 @@
+{{- /* Order matters: the theme snippet runs before the stylesheet is parsed, so a stored theme is on <html>
+       before first paint. Everything is self-hosted from the brand-codex module; the site has no CSS of its own. */ -}}
+{{- with resources.Get "brand-codex/theme-init.js" }}
+<script>{{ .Content | safeJS }}</script>
+{{- else }}{{ errorf "brand-codex/theme-init.js is missing: is the brand-codex module imported at v1.7.0 or later?" }}{{ end }}
+<link rel="preload" href="/fonts/national-park-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/yarndings-12-latin.woff2" as="font" type="font/woff2" crossorigin>
+{{- /* Published at /brand-codex/…: one level below the root, so the stylesheet's ../fonts/ URLs reach /fonts/. */}}
+{{- with resources.Get "brand-codex/codex.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+{{- end }}
+{{- with resources.Get "brand-codex/codex.js" | minify | fingerprint }}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" defer></script>
+{{- end }}
+{{- with partialCached "favicon.html" . }}
+<link rel="icon" href="{{ .RelPermalink }}" type="image/svg+xml">
+{{- end }}

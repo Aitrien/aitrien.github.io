@@ -1,9 +1,0 @@
-/* Placeholder styles. Phase 2 replaces every literal value here with --cx-* tokens. */
-:root { color-scheme: light dark; }
-body { max-width: 42rem; margin: 0 auto; padding: 2rem 1rem; font: 1.0625rem/1.6 system-ui, sans-serif; }
-.site-header { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; margin-bottom: 3rem; }
-.site-header nav { display: flex; gap: 1rem; }
-.site-title { font-weight: 600; text-decoration: none; }
-.post-list { list-style: none; padding: 0; display: grid; gap: .5rem; }
-.post-list time, article > time { opacity: .65; font-size: .9em; }
-.site-footer { margin-top: 4rem; opacity: .65; font-size: .9em; }

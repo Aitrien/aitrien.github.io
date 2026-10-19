@@ -1,7 +1,12 @@
+{{- /* Fallback for a single page outside Work and Writing: page head and prose. */ -}}
 {{ define "main" }}
-<article>
-  <h1>{{ .Title }}</h1>
-  {{ if eq .Section "posts" }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>{{ end }}
-  {{ .Content }}
-</article>
+<div class="cx-container">
+  <header class="cx-page-head">
+    <h1>{{ .Title }}</h1>
+    {{- with .Summary }}
+    <p class="cx-lede">{{ . | plainify }}</p>
+    {{- end }}
+  </header>
+  {{ partial "article.html" (dict "page" . "toc" "auto") }}
+</div>
 {{ end }}

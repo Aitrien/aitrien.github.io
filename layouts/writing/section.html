@@ -1,0 +1,28 @@
+{{- /* docs/templates.md, Writing list: page head (h1, description, RSS link), tag filter, rows grouped by year,
+       pagination when there is more than one page. */ -}}
+{{ define "main" }}
+{{- $pager := .Paginate (.RegularPages.GroupByDate "2006") -}}
+<div class="cx-container">
+  <header class="cx-page-head">
+    <h1>{{ .Title }}</h1>
+    {{- with .Params.intro }}
+    <p class="cx-lede">{{ . }}</p>
+    {{- end }}
+    {{- with .OutputFormats.Get "rss" }}
+    <a class="cx-link" href="{{ .RelPermalink }}"><svg class="cx-icon cx-icon--sm" aria-hidden="true" focusable="false"><use href="#cx-icon-rss"></use></svg>RSS feed</a>
+    {{- end }}
+    {{ partial "tag-filter.html" (dict "section" "writing" "current" nil) }}
+  </header>
+  {{- range $pager.PageGroups }}
+  <section aria-labelledby="y{{ .Key }}-title" id="y{{ .Key }}">
+    <h2 class="cx-posts__year"><span id="y{{ .Key }}-title">{{ .Key }}</span> <a class="cx-anchor" href="#y{{ .Key }}" aria-label="Link to {{ .Key }}">#</a></h2>
+    <ol class="cx-posts" reversed>
+      {{- range .Pages }}
+      {{ partial "post-row.html" (dict "page" . "level" 3) }}
+      {{- end }}
+    </ol>
+  </section>
+  {{- end }}
+  {{ partial "pager.html" (dict "pager" $pager "label" "Writing pages") }}
+</div>
+{{ end }}

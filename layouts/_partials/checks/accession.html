@@ -1,0 +1,39 @@
+{{- /* Catalogue numbers (docs/templates.md, accession-label.md): every entry in Work and Writing has an
+       `accession` in front matter, LM-W-### for work and LM-P-### for writing, never shared. Called once per
+       build from baseof.html; any problem stops the build with the file that caused it. */ -}}
+{{- $collections := dict "work" "W" "writing" "P" -}}
+{{- $seen := dict -}}
+{{- range $section, $code := $collections -}}
+  {{- range (site.GetPage (printf "/%s" $section)).RegularPagesRecursive -}}
+    {{- $file := .RelPermalink }}{{ with .File }}{{ $file = printf "content/%s" .Path }}{{ end -}}
+    {{- $no := .Params.accession -}}
+    {{- $want := printf "^LM-%s-[0-9]{3}$" $code -}}
+    {{- if not $no -}}
+      {{- errorf "accession: %s has no accession number. Add `accession: LM-%s-###` to its front matter (docs/templates.md)." $file $code -}}
+    {{- else if not (findRE $want (string $no)) -}}
+      {{- errorf "accession: %s has %q, which is not a %s catalogue number. Use LM-%s- followed by three digits, e.g. LM-%s-001." $file $no $section $code $code -}}
+    {{- else if eq $no "LM-W-000" "LM-P-000" -}}
+      {{- errorf "accession: %s uses %q. Sequences start at 001." $file $no -}}
+    {{- else if isset $seen $no -}}
+      {{- errorf "accession: %s and %s both use %s. Numbers are never shared or reused; give one of them the next free number." (index $seen $no) $file $no -}}
+    {{- else -}}
+      {{- $seen = merge $seen (dict $no $file) -}}
+    {{- end -}}
+    {{- if not .Params.summary }}{{ errorf "front matter: %s has no summary. It is the lede, the card or row summary and the meta description." $file }}{{ end -}}
+    {{- if gt (len .Params.tags) 5 }}{{ errorf "front matter: %s has %d tags; tag.md allows five on a post and shows three on a card." $file (len .Params.tags) }}{{ end -}}
+    {{- range .Params.tags }}{{ if not (findRE "^[a-z0-9]+(-[a-z0-9]+)*$" .) }}{{ errorf "front matter: %s has tag %q. Tags are lowercase kebab-case (tag.md)." $file . }}{{ end }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+{{- range (site.GetPage "/work").RegularPagesRecursive -}}
+  {{- $page := . -}}
+  {{- $file := printf "content/%s" .File.Path -}}
+  {{- if not (in (slice "live" "building" "archived") .Params.status) }}{{ errorf "front matter: %s has status %q; use live, building or archived." $file .Params.status }}{{ end -}}
+  {{- if not .Params.role }}{{ errorf "front matter: %s has no role (shown in the accession label)." $file }}{{ end -}}
+  {{- if not .Params.stack }}{{ errorf "front matter: %s has no stack (shown in the accession label)." $file }}{{ end -}}
+  {{- with .Params.hero -}}
+    {{- if not (and .src .alt .caption) }}{{ errorf "front matter: %s hero needs src, alt and caption." $file }}{{ end -}}
+    {{- if not ($page.Resources.Get .src) }}{{ errorf "front matter: %s hero %q is not in the page bundle." $file .src }}{{ end -}}
+  {{- else -}}
+    {{- errorf "front matter: %s has no hero image. Case studies open with Plate 1, and cards need a thumbnail (project-card.md)." $file -}}
+  {{- end -}}
+{{- end -}}

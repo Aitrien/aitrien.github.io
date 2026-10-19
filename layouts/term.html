@@ -1,0 +1,40 @@
+{{- /* /tags/{term}/: the static tag filter's result. The filter repeats with this tag current, then the matching
+       work (cards) and writing (rows). */ -}}
+{{ define "main" }}
+{{- $work := (where .Pages "Section" "work").ByDate.Reverse -}}
+{{- $writing := (where .Pages "Section" "writing").ByDate.Reverse -}}
+<div class="cx-container">
+  <header class="cx-page-head">
+    <p class="cx-eyebrow">Filed under</p>
+    <h1>{{ .Data.Term }}</h1>
+    <p class="cx-meta">{{ len .Pages }} {{ cond (eq (len .Pages) 1) "entry" "entries" }}</p>
+    {{ partial "tag-filter.html" (dict "section" "" "current" .) }}
+  </header>
+  {{- with $work }}
+  <section class="cx-section" id="work" aria-labelledby="work-title">
+    <div class="cx-section__head">
+      {{ partial "section-heading.html" (dict "id" "work" "title" "Work") }}
+      <a class="cx-link" href="{{ (site.GetPage "/work").RelPermalink }}">All work <svg class="cx-icon cx-button__arrow" aria-hidden="true" focusable="false"><use href="#cx-icon-arrow-forward"></use></svg></a>
+    </div>
+    <ul class="cx-cards">
+      {{- range . }}
+      <li>{{ partial "card.html" (dict "page" . "level" 3) }}</li>
+      {{- end }}
+    </ul>
+  </section>
+  {{- end }}
+  {{- with $writing }}
+  <section class="cx-section" id="writing" aria-labelledby="writing-title">
+    <div class="cx-section__head">
+      {{ partial "section-heading.html" (dict "id" "writing" "title" "Writing") }}
+      <a class="cx-link" href="{{ (site.GetPage "/writing").RelPermalink }}">All writing <svg class="cx-icon cx-button__arrow" aria-hidden="true" focusable="false"><use href="#cx-icon-arrow-forward"></use></svg></a>
+    </div>
+    <ol class="cx-posts" reversed>
+      {{- range . }}
+      {{ partial "post-row.html" (dict "page" . "level" 3) }}
+      {{- end }}
+    </ol>
+  </section>
+  {{- end }}
+</div>
+{{ end }}

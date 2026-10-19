@@ -1,0 +1,13 @@
+{{- /* figure.md. A standalone image becomes a numbered figure: ![alt](file "caption"). Plate 1 on a case study is
+       the hero, so its content plates start at 2. Inline images stay plain. Alt text is required. */ -}}
+{{- $img := .Page.Resources.Get .Destination -}}
+{{- if not $img }}{{ errorf "content/%s: image %q is not in the page bundle." .Page.File.Path .Destination }}{{ end -}}
+{{- if not .PlainText }}{{ errorf "content/%s: image %q has no alt text. Describe what the image shows (figure.md)." .Page.File.Path .Destination }}{{ end -}}
+{{- if .IsBlock -}}
+  {{- if not .Title }}{{ errorf "content/%s: figure %q has no caption. Add one as the image title: ![alt](file \"what to notice\")." .Page.File.Path .Destination }}{{ end -}}
+  {{- $first := cond (eq .Page.Section "work") 2 1 -}}
+  {{- partial "figure-image.html" (dict "image" $img "alt" .PlainText "caption" (.Title | markdownify) "plate" (add .Ordinal $first)) -}}
+{{- else -}}
+  {{- $s := $img.Process "webp" -}}
+  <img src="{{ $s.RelPermalink }}" alt="{{ .PlainText }}" width="{{ $s.Width }}" height="{{ $s.Height }}" loading="lazy" decoding="async">
+{{- end -}}
