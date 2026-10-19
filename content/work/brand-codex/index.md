@@ -9,7 +9,7 @@ status: live
 tags: [design-systems, design-tokens, accessibility]
 hero:
   src: showcase.png
-  alt: The brand-codex showcase page, with its headline, buttons, an accession label and the contour plate.
+  alt: The brand-codex showcase page, with its headline, buttons, an accession label and the contour plate, over the blurred contour backdrop.
   caption: The showcase is generated from the same tokens and component files that sites import.
 draft: false
 ---
