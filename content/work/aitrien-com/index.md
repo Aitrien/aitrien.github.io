@@ -61,11 +61,11 @@ There is no filtering script. Each tag in the filter is a link to its term page,
 | Check | Result |
 |---|---|
 | CSS files in the site repository | 0 |
-| Lighthouse accessibility, home and a post | LIGHTHOUSE_A11Y |
-| Lighthouse performance, home and a post | LIGHTHOUSE_PERF |
+| Lighthouse accessibility, home and a post | 100 and 100 |
+| Lighthouse performance on mobile, home and a post | 97 and 99 |
 | Requests to other hosts | 0 |
 | Page templates | 6 |
-{caption="Launch checks | Measured on the production build"}
+{caption="Launch checks | Production build, measured before launch"}
 
 ## What I'd change
 
