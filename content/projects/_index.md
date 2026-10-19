@@ -1,5 +1,0 @@
----
-title: Projects
----
-
-Selected work.

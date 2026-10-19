@@ -1,25 +1,74 @@
 baseURL = "https://aitrien.com/"
 languageCode = "en-us"
-title = "Your Name"
-disableKinds = ["taxonomy", "term"]
+title = "Liam Marshall"
+enableRobotsTXT = true
+titleCaseStyle = "none"   # tag pages keep their kebab-case slug as the title (tag.md)
+# Term pages (/tags/{term}/) are the static tag filter; the list of every tag (/tags/) is not needed.
+disableKinds = ["taxonomy"]
 
 [params]
-  description = "Portfolio and writing."
+  role = "Web engineer"
+  description = "Liam Marshall is a web engineer. Case studies and writing on design systems, Hugo and accessible front-end engineering."
+  github = "https://github.com/Aitrien"
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.146.0"
+  # Pinned in go.mod. Upgrade with: hugo mod get github.com/aitrien/brand-codex@vX.Y.Z
+  [[module.imports]]
+    path = "github.com/aitrien/brand-codex"
+
+[taxonomies]
+  tag = "tags"
 
 [menus]
   [[menus.main]]
-    name = "Writing"
-    pageRef = "/posts"
+    identifier = "work"
+    name = "Work"
+    pageRef = "/work"
     weight = 10
   [[menus.main]]
-    name = "Projects"
-    pageRef = "/projects"
+    identifier = "writing"
+    name = "Writing"
+    pageRef = "/writing"
     weight = 20
+  [[menus.main]]
+    identifier = "about"
+    name = "About"
+    pageRef = "/about"
+    weight = 30
 
-[markup.goldmark.renderer]
-  unsafe = false
+# Only Writing has a feed; work/_index.md and about/_index.md turn theirs off.
+[outputs]
+  home = ["html"]
+  section = ["html", "rss"]
+  term = ["html"]
 
-# Phase 2: uncomment to pull styles from brand-codex.
-# [module]
-#   [[module.imports]]
-#     path = "github.com/aitrien/brand-codex"
+[pagination]
+  pagerSize = 20
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = false
+  [markup.goldmark.parser]
+    # Standalone images reach render-image.html on their own, so they can become figures.
+    wrapStandAloneImageWithinParagraph = false
+    [markup.goldmark.parser.attribute]
+      block = true   # {file="…"} on code blocks, {caption="…"} on tables
+  [markup.highlight]
+    noClasses = false   # Chroma classes; colours come from brand-codex (dist/chroma.css in codex.css)
+    codeFences = true
+    guessSyntax = false
+    lineNos = false
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+
+[sitemap]
+  changeFreq = "monthly"
+
+[minify.tdewolff.html]
+  keepDocumentTags = true
+  keepEndTags = true
+  keepQuotes = true

@@ -1,22 +1,21 @@
+{{- partialCached "checks/accession.html" . -}}
 <!doctype html>
 <html lang="{{ site.Language.LanguageCode }}">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
-  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
-  {{ partial "styles.html" . }}
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  {{- partial "head/assets.html" . }}
+  {{- partial "head/meta.html" . }}
 </head>
 <body>
-  <header class="site-header">
-    <a class="site-title" href="{{ site.Home.RelPermalink }}">{{ site.Title }}</a>
-    <nav>
-      {{ range site.Menus.main }}<a href="{{ .URL }}">{{ .Name }}</a>{{ end }}
-    </nav>
-  </header>
-  <main>
-    {{ block "main" . }}{{ end }}
+  {{- /* The icon sprite, once, before anything that uses it. */}}
+  <div hidden>{{ with resources.Get "brand-codex/icons.svg" }}{{ .Content | safeHTML }}{{ end }}</div>
+  <a class="cx-skip-link" href="#main">Skip to content</a>
+  {{- partial "header.html" . }}
+  <main id="main" tabindex="-1">
+    {{- block "main" . }}{{ end }}
   </main>
-  <footer class="site-footer">© {{ now.Year }} {{ site.Title }}</footer>
+  {{- partial "footer.html" . }}
+  {{- block "scripts" . }}{{ end }}
 </body>
 </html>

@@ -1,0 +1,12 @@
+{{- /* specimen-plate.md, exactly as documented: the static contours from dist/plate.html, the pause control
+       (hidden until dist/plate.js starts the drift) and the Plate 0 caption. Home page only. */ -}}
+<figure class="cx-plate-frame">
+  <label class="cx-plate__pause" hidden>
+    <input class="cx-visually-hidden" type="checkbox" aria-label="Pause animation">
+    <svg class="cx-icon" data-when="running" aria-hidden="true" focusable="false"><use href="#cx-icon-pause"></use></svg>
+    <svg class="cx-icon" data-when="paused" aria-hidden="true" focusable="false"><use href="#cx-icon-play"></use></svg>
+    <span class="cx-tooltip" aria-hidden="true"><span data-when="running">Pause animation</span><span data-when="paused">Play animation</span></span>
+  </label>
+  {{ (resources.Get "brand-codex/plate.html").Content | safeHTML }}
+  <figcaption>Plate 0 <span class="cx-sep" aria-hidden="true">|</span> Contour survey <span class="cx-sep" aria-hidden="true">|</span> Simplex noise, 14 levels, index every fifth</figcaption>
+</figure>

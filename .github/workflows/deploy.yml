@@ -42,14 +42,23 @@ jobs:
           sudo dpkg -i "${{ runner.temp }}/hugo.deb"
           hugo version
 
+      - name: Cache Hugo modules
+        uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/hugo_cache
+          key: hugo-modules-${{ hashFiles('go.sum') }}
+
       - name: Configure Pages
         id: pages
         uses: actions/configure-pages@v5
 
+      # Hugo fetches github.com/aitrien/brand-codex at the version pinned in go.mod (through the Go module proxy)
+      # and checks it against go.sum. Warnings fail the build, as on pull requests.
       - name: Build
         env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
-        run: hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+        run: hugo --gc --minify --panicOnWarning --baseURL "${{ steps.pages.outputs.base_url }}/"
 
       - uses: actions/upload-pages-artifact@v3
         with:

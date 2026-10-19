@@ -1,9 +1,12 @@
+{{- /* Plain section pages such as About: page head and prose. Not a catalogued entry, so no accession label. */ -}}
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
-{{ .Content }}
-<ul class="post-list">
-  {{ range .Pages }}
-    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ if eq .Section "posts" }} <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>{{ end }}</li>
-  {{ end }}
-</ul>
+<div class="cx-container">
+  <header class="cx-page-head">
+    <h1>{{ .Title }}</h1>
+    {{- with .Params.intro }}
+    <p class="cx-lede">{{ . }}</p>
+    {{- end }}
+  </header>
+  {{ partial "article.html" (dict "page" . "toc" "auto") }}
+</div>
 {{ end }}

@@ -1,13 +1,65 @@
+{{- /* docs/templates.md, Home: statement and the specimen plate, selected work, recent writing, capabilities.
+       The statement stacks above the plate: brand-codex has no documented split layout for them yet
+       (proposed as a brand-codex addition). */ -}}
 {{ define "main" }}
-<section class="intro">
-  {{ .Content }}
-</section>
-<section>
-  <h2>Recent writing</h2>
-  <ul class="post-list">
-    {{ range first 5 (where site.RegularPages "Section" "posts") }}
-      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time></li>
-    {{ end }}
-  </ul>
-</section>
+<div class="cx-container">
+  <section class="cx-page-head" aria-labelledby="statement-title">
+    {{- with .Params.eyebrow }}
+    <p class="cx-eyebrow">{{ . }}</p>
+    {{- end }}
+    <h1 class="cx-display" id="statement-title">{{ .Title }}</h1>
+    <p class="cx-lede">{{ .Summary | plainify }}</p>
+    <div class="cx-actions">
+      <a class="cx-button cx-button--primary" href="{{ (site.GetPage "/work").RelPermalink }}">View work <svg class="cx-icon cx-button__arrow" aria-hidden="true" focusable="false"><use href="#cx-icon-arrow-forward"></use></svg></a>
+      <a class="cx-button" href="{{ (site.GetPage "/writing").RelPermalink }}">Read the writing</a>
+    </div>
+  </section>
+
+  {{ partial "plate.html" . }}
+
+  {{- with (site.GetPage "/work").RegularPages.ByDate.Reverse }}
+  <section class="cx-section" id="work" aria-labelledby="work-title">
+    <div class="cx-section__head">
+      {{ partial "section-heading.html" (dict "id" "work" "title" "Selected work") }}
+      <a class="cx-link" href="{{ (site.GetPage "/work").RelPermalink }}">All work <svg class="cx-icon cx-button__arrow" aria-hidden="true" focusable="false"><use href="#cx-icon-arrow-forward"></use></svg></a>
+    </div>
+    <ul class="cx-cards">
+      {{- range first 3 . }}
+      <li>{{ partial "card.html" (dict "page" . "level" 3) }}</li>
+      {{- end }}
+    </ul>
+  </section>
+  {{- end }}
+
+  {{- with (site.GetPage "/writing").RegularPages.ByDate.Reverse }}
+  <section class="cx-section" id="writing" aria-labelledby="writing-title">
+    <div class="cx-section__head">
+      {{ partial "section-heading.html" (dict "id" "writing" "title" "Recent writing") }}
+      <a class="cx-link" href="{{ (site.GetPage "/writing").RelPermalink }}">All writing <svg class="cx-icon cx-button__arrow" aria-hidden="true" focusable="false"><use href="#cx-icon-arrow-forward"></use></svg></a>
+    </div>
+    <ol class="cx-posts" reversed>
+      {{- range first 5 . }}
+      {{ partial "post-row.html" (dict "page" . "level" 3) }}
+      {{- end }}
+    </ol>
+  </section>
+  {{- end }}
+
+  {{- with .Content }}
+  <section class="cx-section" id="capabilities" aria-labelledby="capabilities-title">
+    <div class="cx-section__head">
+      {{ partial "section-heading.html" (dict "id" "capabilities" "title" "Capabilities") }}
+    </div>
+    <div class="cx-prose">
+      {{ . }}
+    </div>
+  </section>
+  {{- end }}
+</div>
+{{ end }}
+
+{{ define "scripts" }}
+{{- with resources.Get "brand-codex/plate.js" | minify | fingerprint }}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" defer></script>
+{{- end }}
 {{ end }}
