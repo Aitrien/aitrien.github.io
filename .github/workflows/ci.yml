@@ -45,7 +45,13 @@ jobs:
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
-        run: hugo --gc --minify --panicOnWarning
+        # On failure, the last lines of Hugo's output become annotations, so the reason shows on the pull request.
+        run: |
+          set -o pipefail
+          if ! hugo --gc --minify --panicOnWarning 2>&1 | tee "${{ runner.temp }}/hugo.log"; then
+            tail -n 15 "${{ runner.temp }}/hugo.log" | while IFS= read -r line; do echo "::error title=hugo::${line}"; done
+            exit 1
+          fi
 
       - name: Install lychee
         run: |
