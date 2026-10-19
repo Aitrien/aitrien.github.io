@@ -62,7 +62,7 @@ There is no filtering script. Each tag in the filter is a link to its term page,
 |---|---|
 | CSS files in the site repository | 0 |
 | Lighthouse accessibility, home and a post | 100 and 100 |
-| Lighthouse performance on mobile, home and a post | 97 and 99 |
+| Lighthouse performance on mobile, home and a post | 97 and 97 |
 | Requests to other hosts | 0 |
 | Page templates | 6 |
 {caption="Launch checks | Production build, measured before launch"}
