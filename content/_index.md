@@ -1,7 +1,7 @@
 ---
 title: A good layout knows where people will walk.
 eyebrow: Portfolio | Case studies and writing
-summary: I'm Liam Marshall, a web engineer. I've been drawing floor plans since I was a kid, first in grid-paper notebooks and later as an architectural technician. Now I design and build websites the same way, around the people moving through them.
+summary: "I'm Liam Marshall, a web engineer. I've spent my life designing pathways: through houses on grid paper, then through real homes, and now through websites, the platforms behind them and the data they collect."
 ---
 
 | Area | What I do | Evidence |
