@@ -30,6 +30,8 @@ I wanted one place that showed where my partner and I had explored together: a g
 
 ## Approach
 
+I pushed for the globe to be as true to the real thing as I could get it: the tilt of Earth's axis through the seasons, a soft line between day and night, a separate map of city lights for the night side, and highlights that only catch the water.
+
 ### Lit by the real sun
 
 The day-of-year slider moves the sun the way the seasons do. Earth's axis is tilted by about 23.5 degrees, and the sun's height above the equator follows a sine curve through the year, crossing zero at the March equinox, around day 81:
@@ -50,13 +52,13 @@ float dayNightMix = smoothstep(-0.1, 0.1, lightIntensity);
 vec4 finalColor = mix(nightColor, dayColor, dayNightMix);
 ```
 
-On the day side, the same shader adds a highlight where sunlight reflects off the oceans.
+On the day side, the same shader adds a highlight where sunlight reflects off the surface. In HD mode, a specular map, white for sea and black for land, with the clouds included, limits that highlight to open water, so it glints off the oceans but not the continents or the cloud tops.
 
 ![The eastern United States at night on the globe, with city lights along the coast and four pins standing out: red for New York, white for National Harbor, orange behind it for Shenandoah, and teal for Orlando.](night.png "Move the time of day past sunset and the city lights fade in where the sun has gone down.")
 
 ### Live clouds
 
-The cloud layer comes from Matt Eason's live cloud maps, which are built from EUMETSAT satellite imagery. If they can't be reached, the globe falls back to a plain atmosphere rather than failing to load.
+The cloud layer comes from Matt Eason's live cloud maps, which are rebuilt from EUMETSAT satellite imagery every three hours. The globe fetches the latest map each time it loads, so the clouds you see are the real ones from a few hours ago. If the maps can't be reached, the globe falls back to a plain atmosphere rather than failing to load.
 
 ### Flying to a pin
 
@@ -66,7 +68,7 @@ Selecting a pin flies the camera to it along a curved path with an ease in and o
 
 ### Weather at each pin
 
-Each pin can carry a weather effect, such as rain, or a thunderstorm with flashes of lightning. They're set for each pin when it's added, rather than taken from a forecast.
+Each pin shows a weather condition, such as rain, or a thunderstorm with flashes of lightning around the pin, alongside a temperature and humidity reading. For now these are placeholders: the condition is picked at random and the readings are fixed. I added them because I could see the globe becoming a way to check the weather at each place you've pinned, or even a weather tracker in its own right.
 
 ![The eastern United States in daylight, with a bright flash of lightning around the National Harbor pin.](lightning.png "A thunderstorm effect, with lightning flashing around its pin.")
 
@@ -92,8 +94,15 @@ Pinned planet is live, with six of our trips pinned.
 
 I want to come back and refactor it so anyone can pin their own places. Today the pins are written into the code, and a pin added in the app disappears when the page reloads. Opening it up means accounts, storage for pins and photos, and an API between them: the step from a personal project to a full-stack product.
 
-I would also make every panel tell the truth. The cloud panel says the layer updates every three hours, but nothing schedules a refresh, so the clouds load once per visit. The temperature and humidity shown for each pin are fixed placeholder values. Each should either come from live data or go.
+With pins that belong to anyone, the weather placeholders can become real: a forecast for each place from a weather service, driving the effects on the globe.
 
-Those two gaps are also my main lesson from working with an agent. It built features quickly, and the code it wrote was well organised, but a label could promise something the code didn't do. Next time each spec will include the checks that prove a feature works, and I'll review against those checks rather than against how the feature looks.
+The cloud panel needs fixing too. It says the layer auto-updates every three hours, a detail the agent invented: the clouds have always come from the live source, but the app fetches them once per visit. I noticed while building it and left it. This was early in pushing an agent that far, credits were limited, and fixing one bug often turned up more, so a wrong label wasn't worth the risk of breaking something else.
+
+That's my main lesson from working with an agent. It built features quickly, but it could state things the code didn't do, and each fix had a cost. Next time each spec will include the checks that prove a feature works, and I'll review against those checks rather than against how the feature looks.
 
 Finally, the globe is a canvas driven by the mouse. The list of pins should be a complete keyboard and screen-reader route to every place and its photos.
+
+## Credits
+
+- **Clouds and specular map:** [Live cloud maps](https://github.com/matteason/live-cloud-maps) by Matt Eason. Contains modified EUMETSAT data.
+- **Earth and star maps:** [Solar System Scope](https://www.solarsystemscope.com/textures/), under the Creative Commons Attribution 4.0 licence.
