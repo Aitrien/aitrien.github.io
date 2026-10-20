@@ -11,5 +11,5 @@ summary: "I'm Liam Marshall, a web engineer. I've spent my life designing pathwa
 | Measurement and consent | GA4 and Tag Manager, a BigQuery export for long-term data, Clarity, Semrush and Monsido, behind a region-aware consent layer that falls back to opt-in | [Measurement under consent](/work/measurement-under-consent/), [The slider that moved one subject at a time](/writing/the-slider-that-moved-one-subject/) |
 | Quality and accessibility | WCAG 2.2 treated as a build requirement, and governance policies that catch problems across a large site | [brand-codex](/work/brand-codex/), [this site](/work/aitrien-com/) |
 | Design systems | Tokens and component rules enforced in CI, written for people and AI assistants alike | [brand-codex](/work/brand-codex/) |
-| Interactive and 3D | WebGL scenes with custom GLSL shaders and real-world lighting | [pinned-planet](https://github.com/Aitrien/pinned-planet) |
+| Interactive and 3D | WebGL scenes with custom GLSL shaders and real-world lighting | [Pinned planet](/work/pinned-planet/) |
 {caption="Capabilities | What I work on, and where to see it"}
