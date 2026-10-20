@@ -1,17 +1,23 @@
 ---
 title: About
-intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+intro: I design spaces for people to move through. For most of my life they were houses. Now they’re websites.
 outputs: [html]
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+I'm Liam Marshall, a web engineer. The part of the work I enjoy most is UX and UI design: deciding how a page is laid out, and imagining the people moving through it.
 
-## Lorem ipsum
+## Floor plans first
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+As a kid I designed houses in The Sims, and filled grid-paper notebook after notebook with floor plans. The part I loved was picturing someone walking through them: where they would come in, where they would go next, and what might get in their way.
 
-## Dolor sit amet
+## From houses to websites
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+I studied computer science at the University of Canterbury. Soon after graduating I stepped into a role as an architectural technician, drawing bespoke homes across North Canterbury. I turned clients' briefs into floor plans and elevations, proposed alternatives when a design ran over budget, and made sure every plan met the building code.
 
-Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+In 2022 I moved to the web, at Ara Institute of Canterbury. I maintained and extended the institute's website of about 2,000 pages, and looked after the analytics, consent and quality monitoring around it. The work turned out to be remarkably similar. A brief becomes requirements, a budget becomes trade-offs, and the building code becomes standards like WCAG.
+
+## What I work on now
+
+I build websites and the systems behind them, designed around the people who use them. This site is built from [brand-codex](/work/brand-codex/), my own design system, so every page here is also a test of it. You can see the rest of my work in [Work](/work/), and read about how I approach it in [Writing](/writing/).
+
+My code is on [GitHub](https://github.com/Aitrien).

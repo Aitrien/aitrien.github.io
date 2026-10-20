@@ -8,7 +8,7 @@ disableKinds = ["taxonomy"]
 
 [params]
   role = "Web engineer"
-  description = "Liam Marshall is a web engineer. Case studies and writing on design systems, Hugo and accessible front-end engineering."
+  description = "Liam Marshall is a web engineer who designs websites around the people moving through them. Case studies and writing on web platforms, analytics, design systems and accessibility."
   github = "https://github.com/Aitrien"
 
 [module]

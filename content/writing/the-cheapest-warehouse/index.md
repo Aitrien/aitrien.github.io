@@ -31,10 +31,10 @@ We kept the data in BigQuery. The cheapest warehouse was the one we already had.
 
 ## Where it stopped
 
-The last stage, connecting the data to Power BI, is where the project stalled. More pressing work came in, and it went to the backlog.
+This was a side project. I led it across the web and data teams because I wanted marketing to have better data, and it was never anyone's main priority, so we worked on it when the main work eased off.
 
-The decision still holds. Whenever the dashboards are built, the history they need is the part that was cheapest to keep.
+The last stage, connecting the data to Power BI, is where it stalled. Then the people behind it moved on. Our data engineer left, then one of the two data analysts on the performance team, and within a year I had left too. With nobody left to carry it, the project was abandoned, even though I still think it would have been very valuable to Ara.
 
 ## What I'd do differently
 
-I would start from the dashboard and work backwards. One report that marketing actually used, even fed by a manual export, would have shown which data mattered and kept the project moving. We designed the pipeline first, and one stage of it turned out not to be needed at all.
+The technical decisions held up. What the project lacked was ownership that didn't depend on the people doing the work. I would ask a project leader to help set the goals, hold regular check-ins, and keep us accountable to it. A side project needs that more than a main one, because nothing else keeps it moving, and because it has to survive people leaving.

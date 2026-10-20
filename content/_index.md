@@ -1,7 +1,7 @@
 ---
-title: Fast, accessible websites, built from one design system.
+title: A good layout knows where people will walk.
 eyebrow: Portfolio | Case studies and writing
-summary: I'm Liam Marshall, a web engineer. This site is built from brand-codex, my own design system, so every page here is also a test of it.
+summary: I'm Liam Marshall, a web engineer. I've been drawing floor plans since I was a kid, first in grid-paper notebooks and later as an architectural technician. Now I design and build websites the same way, around the people moving through them.
 ---
 
 | Area | What I do | Evidence |
