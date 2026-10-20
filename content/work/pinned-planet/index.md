@@ -104,5 +104,4 @@ Finally, the globe is a canvas driven by the mouse. The list of pins should be a
 
 ## Credits
 
-- **Clouds and specular map:** [Live cloud maps](https://github.com/matteason/live-cloud-maps) by Matt Eason. Contains modified EUMETSAT data.
-- **Earth and star maps:** [Solar System Scope](https://www.solarsystemscope.com/textures/), under the Creative Commons Attribution 4.0 licence.
+The clouds and the specular map come from Matt Eason's [live cloud maps](https://github.com/matteason/live-cloud-maps), which contain modified EUMETSAT data. The Earth and star maps are from [Solar System Scope](https://www.solarsystemscope.com/textures/), under the Creative Commons Attribution 4.0 licence.
