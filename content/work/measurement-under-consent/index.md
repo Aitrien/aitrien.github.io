@@ -9,8 +9,8 @@ status: live
 tags: [analytics, privacy, javascript]
 hero:
   src: preferences.png
-  alt: Ara's consent preferences dialog. Strictly necessary cookies are always enabled. The expanded Analytics group lists Google Tag Manager, Google Analytics, Microsoft Clarity and Acquia Web Governance, each with its own switch, all off. Accept all, Reject all and Save preferences sit along the bottom.
-  caption: Outside New Zealand, every analytics service stays off until the visitor turns it on.
+  alt: Ara's consent preferences dialog. Strictly necessary cookies are always enabled. The expanded Analytics group lists four services, each with its own switch. Google Tag Manager, Google Analytics and Microsoft Clarity are on, and Acquia Web Governance is off. Accept all, Reject all and Save preferences sit along the bottom.
+  caption: Every service has its own switch, so a visitor can allow some tools and refuse others.
 draft: false
 ---
 
