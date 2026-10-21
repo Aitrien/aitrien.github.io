@@ -1,5 +1,5 @@
 ---
-title: Brand codex
+title: MotifSpec
 accession: LM-W-002
 date: 2026-10-16
 summary: "Sample case study: a design system of DTCG tokens, component rules and generated CSS, written so people and AI assistants can follow it."
@@ -9,12 +9,13 @@ status: live
 tags: [design-systems, design-tokens, accessibility]
 hero:
   src: showcase.png
-  alt: The brand-codex showcase page, with its headline, buttons, an accession label and the contour plate, over the blurred contour backdrop.
+  alt: The MotifSpec showcase page, with its headline, buttons, an accession label and the contour plate, over the blurred contour backdrop.
   caption: The showcase is generated from the same tokens and component files that sites import.
+aliases: [/work/brand-codex/]
 draft: false
 ---
 
-Brand codex is the one place my projects get their colours, type, spacing and components from. It ships as a Hugo module and an npm-style package, and every rule in it is written as an instruction, because an AI coding assistant reads it as often as I do.
+MotifSpec is the one place my projects get their colours, type, spacing and components from. It was called brand-codex until version 1.10.0. It ships as a Hugo module and an npm-style package, and every rule in it is written as an instruction, because an AI coding assistant reads it as often as I do.
 
 ## Problem
 
@@ -66,7 +67,7 @@ Version 1.7.0 is the first tagged release, and this site is the first consumer.
 | Icons in the sprite | 16 |
 | Font payload in KB | 88.0 |
 | Releases from 1.0.0 to 1.7.0 | 11 |
-{caption="Brand codex 1.7.0 | From npm run build"}
+{caption="MotifSpec 1.7.0, then called brand-codex | From npm run build"}
 
 ## What I'd change
 

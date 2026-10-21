@@ -15,9 +15,9 @@ disableKinds = ["taxonomy"]
   [module.hugoVersion]
     extended = true
     min = "0.146.0"
-  # Pinned in go.mod. Upgrade with: hugo mod get github.com/aitrien/brand-codex@vX.Y.Z
+  # Pinned in go.mod. Upgrade with: hugo mod get github.com/aitrien/motifspec@vX.Y.Z
   [[module.imports]]
-    path = "github.com/aitrien/brand-codex"
+    path = "github.com/aitrien/motifspec"
 
 [taxonomies]
   tag = "tags"
@@ -57,7 +57,7 @@ disableKinds = ["taxonomy"]
     [markup.goldmark.parser.attribute]
       block = true   # {file="…"} on code blocks, {caption="…"} on tables
   [markup.highlight]
-    noClasses = false   # Chroma classes; colours come from brand-codex (dist/chroma.css in codex.css)
+    noClasses = false   # Chroma classes; colours come from MotifSpec (dist/chroma.css in codex.css)
     codeFences = true
     guessSyntax = false
     lineNos = false

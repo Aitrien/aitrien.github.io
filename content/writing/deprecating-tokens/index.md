@@ -2,7 +2,7 @@
 title: Deprecating design tokens without a major version
 accession: LM-P-003
 date: 2026-10-17
-summary: "Sample post: why brand-codex 1.7.0 kept two unused tokens, and how the validator stops anything from using them."
+summary: "Sample post: why MotifSpec 1.7.0 kept two unused tokens, and how the validator stops anything from using them."
 tags: [design-tokens, design-systems, hugo]
 draft: false
 ---
@@ -11,7 +11,7 @@ The specimen plate used to pulse. When it became a contour survey, two motion to
 
 ## The cost of a major version
 
-Go modules, which Hugo Modules are built on, put the major version in the import path from version 2 onwards. A brand-codex 2.0.0 would live at a new path, so every site would have to change its import, not just its pin. Removing two tokens nobody used was not worth that.
+Go modules, which Hugo Modules are built on, put the major version in the import path from version 2 onwards. A MotifSpec 2.0.0 would live at a new path, so every site would have to change its import, not just its pin. Removing two tokens nobody used was not worth that.
 
 Releases are also permanent once they are out:
 

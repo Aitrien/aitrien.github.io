@@ -1,9 +1,9 @@
 {{- /* The leaf ornament (Yarndings 12 "h", catalogue name "leaf") as an SVG favicon. The outline was traced from
-       fonts/yarndings-12-latin.woff2 once; its colours come from the pinned brand-codex tokens at build time,
-       so a codex release recolours the favicon too. Returns the published resource. */ -}}
-{{- $tokens := partialCached "codex/tokens.html" "tokens" -}}
+       fonts/yarndings-12-latin.woff2 once; its colours come from the pinned MotifSpec tokens at build time,
+       so a MotifSpec release recolours the favicon too. Returns the published resource. */ -}}
+{{- $tokens := partialCached "motifspec/tokens.html" "tokens" -}}
 {{- $ink := index $tokens "color.accent.fill.rest" -}}
-{{- if not $ink }}{{ errorf "favicon: color.accent.fill.rest is missing from brand-codex/tokens.json" }}{{ end -}}
+{{- if not $ink }}{{ errorf "favicon: color.accent.fill.rest is missing from motifspec/tokens.json" }}{{ end -}}
 {{- $leaf := "M5.29 23.14H2.9V13.62H5.29V11.24H7.67V8.86H10.05V6.48H12.43V4.1H14.81V1.71H17.19V4.1H19.57V6.48H21.95V8.86H24.33V11.24H26.71V13.62H29.1V23.14H26.71V25.52H24.33V27.9H21.95V30.29H17.19V25.52H19.57V23.14H21.95V20.76H24.33V18.38H21.95V20.76H19.57V23.14H17.19V18.38H19.57V16H21.95V13.62H19.57V16H17.19V11.24H14.81V16H12.43V13.62H10.05V16H12.43V18.38H14.81V23.14H12.43V20.76H10.05V18.38H7.67V20.76H10.05V23.14H12.43V25.52H14.81V30.29H10.05V27.9H7.67V25.52H5.29ZM14.81 16H17.19V18.38H14.81ZM14.81 23.14H17.19V25.52H14.81Z" -}}
 {{- $svg := printf "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\"><style>path{fill:%s}@media (prefers-color-scheme:dark){path{fill:%s}}</style><path d=\"%s\"/></svg>" $ink.value $ink.valueDark $leaf -}}
 {{- return (resources.FromString "favicon.svg" $svg | fingerprint) -}}

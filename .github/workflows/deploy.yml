@@ -4,9 +4,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-  # Phase 4: the brand-codex release workflow sends this event.
+  # Phase 4: the MotifSpec release workflow sends this event.
   repository_dispatch:
-    types: [brand-codex-release]
+    types: [motifspec-release]
 
 permissions:
   contents: read
@@ -52,7 +52,7 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
-      # Hugo fetches github.com/aitrien/brand-codex at the version pinned in go.mod through the Go module proxy and
+      # Hugo fetches github.com/aitrien/motifspec at the version pinned in go.mod through the Go module proxy and
       # checks it against go.sum. Warnings fail the build, as on pull requests.
       - name: Build
         env:

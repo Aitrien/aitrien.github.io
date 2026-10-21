@@ -2,7 +2,7 @@
        classed output. Breakout when a line is longer than the prose measure (size.measure.prose, in characters),
        as code-block.md asks. Use {file="path"} for a path. */ -}}
 {{- $lang := .Type | default "text" -}}
-{{- $measure := (index (partialCached "codex/tokens.html" "tokens") "size.measure.prose").value | replaceRE `[^0-9]` "" | int -}}
+{{- $measure := (index (partialCached "motifspec/tokens.html" "tokens") "size.measure.prose").value | replaceRE `[^0-9]` "" | int -}}
 {{- $long := false -}}
 {{- range split .Inner "\n" }}{{ if gt (strings.RuneCount .) $measure }}{{ $long = true }}{{ end }}{{ end -}}
 {{- $result := transform.HighlightCodeBlock . -}}
