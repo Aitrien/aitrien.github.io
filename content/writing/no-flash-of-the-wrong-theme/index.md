@@ -69,4 +69,4 @@ Store a choice, reload, and read the attribute before the stylesheet has loaded.
 > [!TIP]
 > If your Content-Security-Policy blocks inline scripts, allow this one by its hash instead of moving it into a file.
 
-The snippet ships with brand-codex as `dist/theme-init.js`, and the header component documents it, so every site that uses the toggle gets the same fix.
+The snippet ships with MotifSpec as `dist/theme-init.js`, and the header component documents it, so every site that uses the toggle gets the same fix.

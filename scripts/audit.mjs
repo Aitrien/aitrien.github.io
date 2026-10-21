@@ -1,8 +1,8 @@
 // node scripts/audit.mjs — the site has no styling of its own. Fails on:
-//   - any stylesheet in the repository (styles come only from the brand-codex module)
+//   - any stylesheet in the repository (styles come only from the MotifSpec module)
 //   - style attributes in layouts/ or content/
 //   - raw colours, or numbers with a length or time unit, in layouts/ or content/ (code samples included)
-// Zero is allowed (0px is not a size). Values that reach the page from brand-codex are checked by its own audit.
+// Zero is allowed (0px is not a size). Values that reach the page from MotifSpec are checked by its own audit.
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative, extname } from 'node:path';
 
@@ -23,7 +23,7 @@ function* walk(dir) {
 const problems = [];
 for (const file of walk(ROOT)) {
   const rel = relative(ROOT, file);
-  if (['.css', '.scss', '.sass', '.less'].includes(extname(file))) problems.push(`${rel}: stylesheet in the site repository; styles belong in brand-codex`);
+  if (['.css', '.scss', '.sass', '.less'].includes(extname(file))) problems.push(`${rel}: stylesheet in the site repository; styles belong in MotifSpec`);
 }
 for (const dir of ['layouts', 'content']) {
   for (const file of walk(join(ROOT, dir))) {
@@ -44,7 +44,7 @@ for (const dir of ['layouts', 'content']) {
 
 if (problems.length) {
   console.error(problems.map((p) => `✗ ${p}`).join('\n'));
-  console.error(`${problems.length} problem(s). Use brand-codex components and tokens instead, or propose an addition to brand-codex.`);
+  console.error(`${problems.length} problem(s). Use MotifSpec components and tokens instead, or propose an addition to MotifSpec.`);
   process.exit(1);
 }
 console.log('No stylesheets, style attributes, raw colours, sizes or durations in layouts/ or content/.');

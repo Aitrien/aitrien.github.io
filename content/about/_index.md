@@ -18,6 +18,6 @@ In 2022 I moved to the web, at Ara Institute of Canterbury. I maintained and ext
 
 ## What I work on now
 
-I build websites and the systems behind them, designed around the people who use them. This site is built from [brand-codex](/work/brand-codex/), my own design system, so every page here is also a test of it. You can see the rest of my work in [Work](/work/), and read about how I approach it in [Writing](/writing/).
+I build websites and the systems behind them, designed around the people who use them. This site is built from [MotifSpec](/work/motifspec/), my own design system, so every page here is also a test of it. You can see the rest of my work in [Work](/work/), and read about how I approach it in [Writing](/writing/).
 
 My code is on [GitHub](https://github.com/Aitrien).

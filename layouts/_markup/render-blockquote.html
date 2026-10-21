@@ -10,7 +10,7 @@
       "warning" (dict "class" "cx-callout cx-callout--warning" "icon" "warning" "title" "Warning")
       "caution" (dict "class" "cx-callout cx-callout--danger" "icon" "danger" "title" "Danger") -}}
   {{- $k := index $kinds .AlertType -}}
-  {{- if not $k }}{{ errorf "%s: [!%s] is not a brand-codex callout. Use NOTE, TIP, WARNING or CAUTION (shown as Danger)." $file (upper .AlertType) }}{{ end -}}
+  {{- if not $k }}{{ errorf "%s: [!%s] is not a MotifSpec callout. Use NOTE, TIP, WARNING or CAUTION (shown as Danger)." $file (upper .AlertType) }}{{ end -}}
   {{- if strings.Contains (string .Text) "cx-code" }}{{ errorf "%s: callouts can't contain code blocks (callout.md)." $file }}{{ end }}
 <div class="{{ $k.class }}" role="note">
   <p class="cx-callout__title"><svg class="cx-icon cx-icon--sm" aria-hidden="true" focusable="false"><use href="#cx-icon-{{ $k.icon }}"></use></svg>{{ $k.title }}</p>

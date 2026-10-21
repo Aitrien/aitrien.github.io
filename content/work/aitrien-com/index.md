@@ -1,16 +1,16 @@
 ---
-title: aitrien.com on brand-codex
+title: aitrien.com on MotifSpec
 accession: LM-W-001
 date: 2026-10-18
 summary: "Sample case study: rebuilding this site on my design system, with no CSS of its own and every page rendered from documented components."
 role: Sole engineer
-stack: [Hugo, brand-codex, GitHub Pages]
+stack: [Hugo, MotifSpec, GitHub Pages]
 status: live
 tags: [hugo, design-systems, accessibility]
 hero:
   src: home.png
   alt: The home page of aitrien.com, with its headline and two buttons over softly blurred contour lines, and the first project cards below.
-  caption: The home page, built entirely from brand-codex components.
+  caption: The home page, built entirely from MotifSpec components.
 draft: false
 ---
 
@@ -31,12 +31,12 @@ A portfolio built on its own design system is only a fair test if the site can't
 
 ### Module wiring
 
-The site imports brand-codex as a Hugo module, pinned to a tag in `go.mod`. The module mounts its own files, so the import is the whole integration.
+The site imports MotifSpec as a Hugo module, pinned to a tag in `go.mod`. The module mounts its own files, so the import is the whole integration.
 
 ```toml {file="hugo.toml"}
 [module]
   [[module.imports]]
-    path = "github.com/aitrien/brand-codex"
+    path = "github.com/aitrien/motifspec"
 
 [markup.highlight]
   noClasses = false
@@ -69,4 +69,4 @@ There is no filtering script. Each tag in the filter is a link to its term page,
 
 ## What I'd change
 
-I would have prototyped the backdrop before the first release. It replaced the plate on the home page, moved the header controls to pills, and needed a new contrast check for text on the frost, all in brand-codex rather than here, which is exactly what the one rule is for.
+I would have prototyped the backdrop before the first release. It replaced the plate on the home page, moved the header controls to pills, and needed a new contrast check for text on the frost, all in MotifSpec rather than here, which is exactly what the one rule is for.
