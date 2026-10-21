@@ -1,10 +1,10 @@
-{{- /* docs/templates.md, Case study: back link, accession label, h1 and lede, hero (Plate 1), TOC + prose,
-       pagination. The TOC is always shown on case studies. */ -}}
+{{- /* docs/templates.md, Case study: back link, accession label (lead), h1 and lede, hero (Plate 1), TOC + prose,
+       on a phone the full label as a card, pagination. The TOC is always shown on case studies. */ -}}
 {{ define "main" }}
 <div class="cx-container">
   <header class="cx-page-head">
     {{ partial "back.html" (dict "href" (site.GetPage "/work").RelPermalink "label" "All work") }}
-    {{ partial "accession/label.html" . }}
+    {{ partial "accession/label.html" (dict "page" . "variant" "lead") }}
     <h1>{{ .Title }}</h1>
     <p class="cx-lede">{{ .Summary | plainify }}</p>
   </header>
@@ -13,6 +13,7 @@
     {{ partial "figure-image.html" (dict "image" ($.Resources.Get .src) "alt" .alt "caption" (.caption | markdownify) "plate" 1 "eager" true) }}
     {{- end }}
     {{ partial "article.html" (dict "page" . "toc" "always") }}
+    {{ partial "accession/label.html" (dict "page" . "variant" "card") }}
     {{- with .GetTerms "tags" }}
     {{ partial "filed-under.html" $ }}
     {{- end }}
