@@ -2,4 +2,4 @@ module github.com/aitrien/aitrien.github.io
 
 go 1.22
 
-require github.com/aitrien/motifspec v1.10.0 // indirect
+require github.com/aitrien/motifspec v1.10.1 // indirect
