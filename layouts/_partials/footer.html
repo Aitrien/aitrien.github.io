@@ -1,8 +1,8 @@
-{{- /* site-footer.md. The version link names the MotifSpec release this build is pinned to. */ -}}
+{{- /* site-footer.md, without the optional footer band. The version link names the MotifSpec release this build is
+       pinned to. */ -}}
 {{- $codex := dict -}}
 {{- with resources.Get "motifspec/tokens.json" }}{{ $codex = . | transform.Unmarshal }}{{ end -}}
 <footer class="cx-footer">
-  <span class="cx-band" aria-hidden="true"></span>
   <div class="cx-container">
     <div class="cx-footer__grid">
       <div>

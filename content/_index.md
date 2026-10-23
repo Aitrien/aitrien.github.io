@@ -4,12 +4,13 @@ eyebrow: Portfolio | Case studies and writing
 summary: "I'm Liam Marshall, a web engineer. I've spent my life designing pathways: through houses on grid paper, then through real homes, and now through websites, the platforms behind them and the data they collect."
 ---
 
-| Area | What I do | Evidence |
+| Area | What I've done | Where |
 |---|---|---|
-| Web platforms | Maintained and extended Ara's Optimizely (.NET/C#) website of about 2,000 pages: content models, search and templates | Ara Institute of Canterbury |
-| Integrations and reliability | Fed programme data from APIs into CMS pages, and diagnosed failures across APIs, caching and search | Ara Institute of Canterbury |
-| Measurement and consent | GA4 and Tag Manager, a BigQuery export for long-term data, Clarity, Semrush and Monsido, behind a region-aware consent layer that falls back to opt-in | [Measurement under consent](/work/measurement-under-consent/), [The slider that moved one subject at a time](/writing/the-slider-that-moved-one-subject/) |
-| Quality and accessibility | WCAG 2.2 treated as a build requirement, and governance policies that catch problems across a large site | [MotifSpec](/work/motifspec/), [this site](/work/aitrien-com/) |
-| Design systems | Tokens and component rules enforced in CI, written for people and AI assistants alike | [MotifSpec](/work/motifspec/) |
-| Interactive and 3D | WebGL scenes with custom GLSL shaders and real-world lighting | [Pinned planet](/work/pinned-planet/) |
-{caption="Capabilities | What I work on, and where to see it"}
+| Front-end engineering | Extended an Optimizely site of about 2,000 pages with C#/.NET, Razor and JavaScript: reusable, responsive components and smoother editorial publishing | A two-column Razor block; newsroom WYSIWYG improvements |
+| API integration and course discovery | Connected curriculum data to programme search, improved back-end filtering, and diagnosed integration bugs across the CMS, APIs and SQL-backed services | Campus-aware course search; a SQL query defect investigation |
+| UX, navigation and information architecture | Made information easier to find across the website and student app, from city-based course filters to centralised content navigation | Explore Ara navigation in MyDay; contextual page links; [the subject slider](/writing/the-slider-that-moved-one-subject/) |
+| Analytics and consent | GA4 and Tag Manager tracking, conversion-path reports and subject-level events; behavioural analytics to find friction; region-aware consent that fails safe | [Measurement under consent](/work/measurement-under-consent/), [The slider that moved one subject at a time](/writing/the-slider-that-moved-one-subject/) |
+| SEO, accessibility and web quality | Found site-quality issues and keyword opportunities with Acquia Web Governance and Semrush; fixed metadata, broken links and heading order; set image-optimisation practice | Ara website governance and optimisation |
+| Testing | Selenium and TypeScript end-to-end tests for course search and API-dependent pages, and investigation of failures that affect programme data | Browser tests run against UAT before each production release |
+| Current development | Design systems with documented components, design tokens and contrast checked at build time; interactive 3D with React, Three.js and GLSL | [MotifSpec](/work/motifspec/), [Pinned planet](/work/pinned-planet/) |
+{caption="Capabilities | What I've built, and where"}
