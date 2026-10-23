@@ -1,20 +1,32 @@
 ---
 title: About
-intro: I design spaces for people to move through. For most of my life they were houses. Now they’re websites.
+intro: I’m interested in how people move through environments. Where they start, what draws them forward, where they get stuck, what makes them stay.
 outputs: [html]
 ---
 
-I'm Liam Marshall, a web engineer. The part of the work I enjoy most is UX and UI design: deciding how a page is laid out, and imagining the people moving through it.
+I'm Liam Marshall, a web developer working across UX, front-end development, CMS engineering and analytics. The common thread in my work is human-computer interaction: understanding how people use the systems around them, then making those systems easier to navigate.
 
-## Floor plans first
+## Designing digital worlds
 
-As a kid I designed houses in The Sims, and filled grid-paper notebook after notebook with floor plans. The part I loved was picturing someone walking through them: where they would come in, where they would go next, and what might get in their way.
+From my teens into my early twenties, I ran a Minecraft server. I became interested in how players moved from the starting area into the wider world: which touchpoints helped them find their way, where they ran into barriers, what kept them engaged, and what made them come back.
 
-## From houses to websites
+I didn't have the vocabulary for user journeys, interaction design or retention at the time, but I was already interested in how the design of an environment shaped people's behaviour within it.
 
-I studied computer science at the University of Canterbury. Soon after graduating I stepped into a role as an architectural technician, drawing bespoke homes across North Canterbury. I turned clients' briefs into floor plans and elevations, proposed alternatives when a design ran over budget, and made sure every plan met the building code.
+## From physical spaces to interfaces
 
-In 2022 I moved to the web, at Ara Institute of Canterbury. I maintained and extended the institute's website of about 2,000 pages, and looked after the analytics, consent and quality monitoring around it. The work turned out to be remarkably similar. A brief becomes requirements, a budget becomes trade-offs, and the building code becomes standards like WCAG.
+I studied computer science at the University of Canterbury and later worked as an architectural technician, translating clients' requirements into plans for bespoke homes.
+
+That work developed another side of the same interest. Designing a space means thinking about its structure, the constraints around it, and how someone will actually use it. The details matter, but so does the experience of moving through the whole thing.
+
+Today, I apply that thinking to digital products.
+
+## Building for people
+
+At Ara Institute of Canterbury, I worked across a large institutional website and its student app. My work spanned CMS development, course discovery, navigation, analytics, consent and website quality.
+
+I built reusable CMS components, led a cross-team improvement to programme location search, and redesigned the student app's navigation to make hard-to-find content easier to reach. I also implemented analytics tracking and reporting, introduced behavioural analytics, and developed a [region-aware consent layer](/work/measurement-under-consent/) with fail-safe behaviour.
+
+I enjoyed working across these boundaries: from the way an interface was organised to the data, code and integrations underneath it.
 
 ## What I work on now
 
