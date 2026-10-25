@@ -7,6 +7,7 @@ role: Web developer, Ara Institute of Canterbury
 stack: [GA4, Google Tag Manager, Google Ads, JavaScript]
 status: live
 tags: [analytics, data, javascript]
+thumb: thumb.svg
 hero:
   src: hero.png
   alt: A line drawing of a funnel report on a board. Three bars step down from left to right, and above the shorter two a dashed outline reaches up to the height of the bar before. In front, a table of three rows, marked with one, two and three dots, each with a flat bar of its size. The last bar and its row are green.
@@ -14,7 +15,7 @@ hero:
 draft: false
 ---
 
-Marketing at Ara could see how many students enrolled, but the journey that led there was spread across separate reports. I built the tracking and reports that brought it into one place, from a campaign link to a completed enrolment, then trained the marketing specialists to use them, so they could judge a campaign while it was still running.
+Marketing at Ara could see how many students enrolled, but the journey that led there was spread across separate reports. I put together tracking and reports that brought it into one place, from a campaign link to a completed enrolment, then trained the marketing specialists to use them, so they could judge a campaign while it was still running.
 
 ## Problem
 
@@ -26,14 +27,14 @@ That made it hard to judge a campaign while recruitment was underway. Sometimes 
 
 - **The end of the journey wasn't on the website.** Enrolments lived in the Learner Management System. The website could only see the page a student reached once their enrolment was complete.
 - **Many people made campaign links.** Each marketing specialist tagged their own links, so the tags were only as consistent as the people typing them.
-- **The readers weren't analysts.** The reports were for marketing specialists, many of them new to GA4, so a report had to be usable, not just complete.
+- **The readers weren't analysts.** The reports were for marketing specialists, some of them new to GA4, so a report had to be usable, not just complete.
 - **The answer had to come during recruitment.** A report that only made sense once the semester's numbers were final would have been too late.
 
 ## Approach
 
 ### Consistent campaign links
 
-I built a campaign URL generator so marketing specialists could create tagged links without assembling each UTM parameter by hand. It offered fixed choices for source, medium, campaign layer and campaign location, alongside a free-text campaign name and an optional content descriptor. Every link came out in the same shape, so website activity could be split by campaign in GA4.
+I built a campaign URL generator so marketing specialists could create tagged links without assembling each UTM parameter by hand. It offered fixed choices for source, medium, campaign layer and campaign location, based on the platforms and media Ara used, alongside a free-text campaign name and an optional content descriptor. Every link came out in the same shape, so website activity could be split by campaign in GA4.
 
 I also linked Ara's Google Ads account to its GA4 property, so advertising and website measurement fed the same reports.
 
