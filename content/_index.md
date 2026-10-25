@@ -1,7 +1,7 @@
 ---
 title: A good layout knows where people will walk.
 eyebrow: Portfolio | Case studies and writing
-summary: "I'm Liam Marshall, a web engineer. I've spent my life designing pathways: through houses on grid paper, then through real homes, and now through websites, the platforms behind them and the data they collect."
+summary: "I’m interested in how people move through digital environments. Where they start, what draws them forward, where they get stuck, what makes them stay."
 ---
 
 | Area | What I've done | Where |

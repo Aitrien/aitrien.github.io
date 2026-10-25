@@ -7,8 +7,8 @@ titleCaseStyle = "none"   # tag pages keep their kebab-case slug as the title (t
 disableKinds = ["taxonomy"]
 
 [params]
-  role = "Web engineer"
-  description = "Liam Marshall is a web engineer who designs websites around the people moving through them. Case studies and writing on web platforms, analytics, design systems and accessibility."
+  role = "Software engineer"
+  description = "Liam Marshall is a software engineer who designs applications around the people moving through them. Case studies and writing on web platforms, analytics, design systems and accessibility."
   github = "https://github.com/Aitrien"
 
 [module]
