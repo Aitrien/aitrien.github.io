@@ -4,7 +4,7 @@ intro: I’m interested in how people move through environments. Where they star
 outputs: [html]
 ---
 
-I'm Liam Marshall, a web developer working across UX, front-end development, CMS engineering and analytics. The common thread in my work is human-computer interaction: understanding how people use the systems around them, then making those systems easier to navigate.
+I'm Liam Marshall, a software engineer working across UX, front-end development, CMS engineering and analytics. The common thread in my work is human-computer interaction: understanding how people use the systems around them, then making those systems easier to navigate.
 
 ## Designing digital worlds
 
@@ -30,6 +30,6 @@ I enjoyed working across these boundaries: from the way an interface was organis
 
 ## What I work on now
 
-I build websites and the systems behind them, designed around the people who use them. This site is built from [MotifSpec](/work/motifspec/), my own design system, so every page here is also a test of it. You can see the rest of my work in [Work](/work/), and read about how I approach it in [Writing](/writing/).
+I build applications and the systems behind them, designed around the people who use them. This site is built from [MotifSpec](/work/motifspec/), my own design system, so every page here is also a test of it. You can see the rest of my work in [Work](/work/), and read about how I approach it in [Writing](/writing/).
 
 My code is on [GitHub](https://github.com/Aitrien).
