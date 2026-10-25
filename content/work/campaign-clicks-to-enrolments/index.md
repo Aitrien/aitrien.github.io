@@ -10,15 +10,15 @@ tags: [analytics, data, javascript]
 hero:
   src: hero.png
   alt: A line drawing of a funnel report on a board. Three bars step down from left to right, and above the shorter two a dashed outline reaches up to the height of the bar before. In front, a table of three rows, marked with one, two and three dots, each with a flat bar of its size. The last bar and its row are green.
-  caption: Programme page views, apply clicks and enrolments. The dashed outlines are the people who didn't reach the next step.
+  caption: Seeing data drawn out can make exploring it, and making sense of it, more engaging.
 draft: false
 ---
 
-Marketing at Ara could see how many students enrolled, but not how they got there. I built the tracking and reports that connected a campaign link to a completed enrolment, then trained the marketing specialists to use them, so they could judge a campaign while it was still running.
+Marketing at Ara could see how many students enrolled, but the journey that led there was spread across separate reports. I built the tracking and reports that brought it into one place, from a campaign link to a completed enrolment, then trained the marketing specialists to use them, so they could judge a campaign while it was still running.
 
 ## Problem
 
-Successful enrolments were reported through the Learner Management System. What happened before them was largely invisible: how many prospective students reached a programme page, where they dropped out, and which campaigns and channels brought in the people who went on to enrol.
+Successful enrolments were reported through the Learner Management System. The data about what happened before them existed, but not in one place, and it couldn't be filtered quickly. That made the larger picture hard to see: how many prospective students reached a programme page, where they dropped out, and which campaigns and channels brought in the people who went on to enrol.
 
 That made it hard to judge a campaign while recruitment was underway. Sometimes enrolment numbers decided whether a programme would run the next semester, so the insight had to arrive in time to act on.
 
@@ -60,7 +60,7 @@ After the reports went live, I trained the marketing specialists to move through
 
 ## Outcome
 
-Marketing could now see what happened between a first campaign visit and a completed enrolment. Instead of waiting for final enrolment counts, they could look at engagement on the website, compare campaigns and spot where people were dropping off while recruitment was still running, and make better-informed decisions because of it.
+Marketing could now see, in one place, what happened between a first campaign visit and a completed enrolment. Instead of waiting for final enrolment counts, they could look at engagement on the website, compare campaigns and spot where people were dropping off while recruitment was still running, and make better-informed decisions because of it.
 
 | Report | Steps | What it showed |
 |---|---|---|
