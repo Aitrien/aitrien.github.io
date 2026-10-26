@@ -2,7 +2,7 @@
 title: The slider that moved one subject at a time
 accession: LM-P-004
 date: 2026-10-19
-summary: "A Clarity heatmap showed that 80% of clicks on Ara's home page went to one arrow. Making each click move a full page of subjects brought that down to 34%."
+summary: "A Clarity heatmap showed that 80% of clicks on Ara's home page went to one arrow. Making each click move a full page of subjects brought that down to 25%."
 tags: [analytics, ux]
 draft: false
 ---
@@ -19,7 +19,7 @@ The slider went onto the home page about six months before Clarity did. Until th
 4. **A specialisation landing page.** Health, for example, contains Nursing, Midwifery and Medical Imaging, each with its own list of courses.
 5. **The programme page.**
 
-Putting the subject areas in a slider on the home page was meant to cut out the second step. Visually, it did: people could pick a subject without leaving the home page. But on average it took more clicks to convert than before, not fewer, and at the time we couldn't see why.
+Putting the subject areas in a slider on the home page was meant to cut out the second step. Visually, it did: people could pick a subject without leaving the home page. What we couldn't see was how many clicks it took to get there. Once Clarity was in place, it showed that on average the slider had added clicks on the way to converting, not removed them.
 
 ## What a heatmap shows that analytics can't
 
@@ -37,7 +37,7 @@ The fix was small: each click now moves the slider five subjects, a full page of
 
 | Measure | Before | After |
 |---|---|---|
-| Share of home page clicks on the right arrow | 80% | 34% |
+| Share of home page clicks on the right arrow | 80% | 25% |
 {caption="Subject slider | Clarity heatmap, home page clicks"}
 
 ## Reading the result
@@ -45,7 +45,7 @@ The fix was small: each click now moves the slider five subjects, a full page of
 > [!NOTE]
 > This is a share of clicks, not a count. When the arrow takes fewer of them, everything else on the page takes more.
 
-The drop doesn't mean people stopped browsing subjects. A third of clicks still go to the arrow, so plenty of visitors still page through. What changed is how much each click does: the same browsing now takes a fraction of the effort, and the rest of the home page gets more of people's attention.
+The drop doesn't mean people stopped browsing subjects. A quarter of clicks still go to the arrow, so plenty of visitors still page through. What changed is how much each click does: the same browsing now takes a fraction of the effort, and the rest of the home page gets more of people's attention.
 
 ## Clarity as a reporting tool
 
