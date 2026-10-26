@@ -9,17 +9,31 @@ draft: false
 
 GA4 tells you where people went. It doesn't tell you what they tried to do on the way. When I added Microsoft Clarity to Ara's website, the first thing it showed us was something no report had: one small arrow doing most of the work on the home page.
 
+## A shortcut that added clicks
+
+The slider went onto the home page about six months before Clarity did. Until then, the typical route to a programme was thought to run like this:
+
+1. **Home page.**
+2. **Study Interest Areas**, a grid of tiles for Ara's 20 subject areas, such as Health.
+3. **A subject landing page.**
+4. **A specialisation landing page.** Health, for example, contains Nursing, Midwifery and Medical Imaging, each with its own list of courses.
+5. **The programme page.**
+
+Putting the subject areas in a slider on the home page was meant to cut out the second step. Visually, it did: people could pick a subject without leaving the home page. But on average it took more clicks to convert than before, not fewer, and at the time we couldn't see why.
+
 ## What a heatmap shows that analytics can't
 
-Ara's home page has a subject slider. It shows five subject areas at a time, with an arrow to see more. Page views and events can tell you which subject pages people reach, but not how hard they worked to get there.
+Page views and events could show which subject pages people reached from the slider, but not how hard they worked to get there.
 
 The Clarity heatmap could. Of all the clicks anywhere on the home page, 80% landed on the slider's right arrow.
 
 ## Five visible, one per click
 
-The slider showed five subjects but moved only one each time the arrow was pressed. Anyone looking for a subject further along had to click again and again, watching the same four subjects shuffle across each time. The heatmap was recording people paging through a list one item at a time.
+The slider showed five subjects but moved only one each time the arrow was pressed. With 20 subject areas, reaching the last one took 15 clicks, watching the same four subjects shuffle across each time. The heatmap was recording people paging through a list one item at a time, and those clicks were what the shortcut had cost.
 
-The fix was small: each click now moves the slider five subjects, a full page of new options.
+There was a left arrow too, but it barely got clicked. The subjects ran in alphabetical order, so people read them from left to right, and moving right is the direction people naturally browse anyway.
+
+The fix was small: each click now moves the slider five subjects, a full page of new options. Reaching the last subject area now takes three clicks instead of 15.
 
 | Measure | Before | After |
 |---|---|---|
