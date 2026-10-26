@@ -1,6 +1,6 @@
 ---
 title: Writing
-intro: Notes on design systems, Hugo and front-end engineering, newest first.
+intro: Notes on some of the valuable learnings I've made along the way.
 aliases: [/posts/]
 cascade:
   build:

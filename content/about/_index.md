@@ -2,6 +2,8 @@
 title: About
 intro: I’m interested in how people move through environments. Where they start, what draws them forward, where they get stuck, what makes them stay.
 outputs: [html]
+build:
+  publishResources: false   # only the processed WebP images are published
 ---
 
 I'm Liam Marshall, a software engineer working across UX, front-end development, CMS engineering and analytics. The common thread in my work is human-computer interaction: understanding how people use the systems around them, then making those systems easier to navigate.
@@ -15,6 +17,9 @@ I didn't have the vocabulary for user journeys, interaction design or retention 
 ## From physical spaces to interfaces
 
 I studied computer science at the University of Canterbury and later worked as an architectural technician, translating clients' requirements into plans for bespoke homes.
+
+![A SketchUp model of an L-shaped single-storey house with the roof taken off. A long wing of bedrooms runs behind a glazed hallway clad in timber and black panels, and the other wing opens into a kitchen and living room. A small separate outbuilding and a few loose door and window components sit to the right.](house-model.png "With the roof off, the plan reads as a route: from the living spaces, along the hallway, to each room.")
+{width="prose"}
 
 That work developed another side of the same interest. Designing a space means thinking about its structure, the constraints around it, and how someone will actually use it. The details matter, but so does the experience of moving through the whole thing.
 

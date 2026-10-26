@@ -1,6 +1,6 @@
 ---
 title: Work
-intro: Case studies of things I've built, newest first. Each one is filed with its own catalogue number.
+intro: Case studies of things I've built.
 outputs: [html]
 aliases: [/projects/]
 cascade:
