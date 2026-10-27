@@ -4,24 +4,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  {{- partial "head/assets.html" . }}
+  {{- partial "motifspec/head.html" . }}
+  {{- with partialCached "favicon.html" . }}
+  <link rel="icon" href="{{ .RelPermalink }}" type="image/svg+xml">
+  {{- end }}
   {{- partial "head/meta.html" . }}
 </head>
 <body class="cx-backdrop-page">
-  {{- /* backdrop.md: the contour survey behind every page, first in <body>, under the frost. */}}
-  {{ with resources.Get "motifspec/backdrop.html" }}{{ .Content | safeHTML }}{{ else }}{{ errorf "motifspec/backdrop.html is missing: is the MotifSpec module imported at v1.10.0 or later?" }}{{ end }}
-  {{- /* The icon sprite, once, before anything that uses it. */}}
-  <div hidden>{{ with resources.Get "motifspec/icons.svg" }}{{ .Content | safeHTML }}{{ end }}</div>
-  <a class="cx-skip-link" href="#main">Skip to content</a>
-  {{- partial "header.html" . }}
+  {{- partial "motifspec/body-start.html" . }}
+  {{- partial "motifspec/site-header.html" . }}
   <main id="main" tabindex="-1">
     {{- block "main" . }}{{ end }}
   </main>
   {{- partial "footer.html" . }}
-  {{- /* Drifts the backdrop and reveals the header's pause control; without it the contours stay still. */}}
-  {{- with resources.Get "motifspec/plate.js" | minify | fingerprint }}
-  <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" defer></script>
-  {{- end }}
+  {{- partial "motifspec/body-end.html" . }}
   {{- block "scripts" . }}{{ end }}
 </body>
 </html>
