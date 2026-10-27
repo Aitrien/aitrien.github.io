@@ -38,7 +38,10 @@ jobs:
           path: ${{ runner.temp }}/hugo_cache
           key: hugo-modules-${{ hashFiles('go.sum') }}
 
-      - name: Audit layouts and content
+      - name: Check layouts and content with MotifSpec's checker
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_MODULE_PROXY: https://proxy.golang.org   # hugo config mounts downloads the pinned module if it isn't cached
         run: node scripts/audit.mjs
 
       - name: Build (warnings fail the build)
