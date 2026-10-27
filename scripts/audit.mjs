@@ -1,50 +1,35 @@
-// node scripts/audit.mjs — the site has no styling of its own. Fails on:
-//   - any stylesheet in the repository (styles come only from the MotifSpec module)
-//   - style attributes in layouts/ or content/
-//   - raw colours, or numbers with a length or time unit, in layouts/ or content/ (code samples included)
-// Zero is allowed (0px is not a size). Values that reach the page from MotifSpec are checked by its own audit.
-import { readFileSync, readdirSync, statSync } from 'node:fs';
-import { join, relative, extname } from 'node:path';
+// node scripts/audit.mjs: check this site with MotifSpec's rule checker (scripts/check.mjs in the pinned module, see
+// its docs/hugo.md), so the rules always match the release in go.mod. It fails on stylesheets, style attributes, raw
+// colours and units, primitive, unknown or deprecated tokens, classes and icons MotifSpec doesn't define, and "·"
+// separators, in layouts/ and content/.
+import { execFileSync } from 'node:child_process';
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 
 const ROOT = new URL('..', import.meta.url).pathname;
-const SKIP = new Set(['.git', 'public', 'resources', 'node_modules', '.hugo_build.lock']);
-const RAW_COLOR = /(?<![\w&/.-])#(?:[0-9a-fA-F]{8}|[0-9a-fA-F]{6}|[0-9a-fA-F]{3,4})(?![\w-])|\b(?:rgba?|hsla?|hwb|lab|lch|oklab|oklch|color)\(/g;
-const RAW_UNIT = /(?<![\w.#-])-?(?:\d+\.?\d*|\.\d+)(?:px|rem|em|ch|ex|vw|vh|vmin|vmax|svh|dvh|lvh|cqi|cqw|pt|pc|cm|mm|in|ms|s)\b/g;
-const STYLE_ATTR = /\sstyle\s*=/g;
-
-function* walk(dir) {
-  for (const name of readdirSync(dir)) {
-    if (SKIP.has(name)) continue;
-    const p = join(dir, name);
-    if (statSync(p).isDirectory()) yield* walk(p); else yield p;
-  }
-}
-
-const problems = [];
-for (const file of walk(ROOT)) {
-  const rel = relative(ROOT, file);
-  if (['.css', '.scss', '.sass', '.less'].includes(extname(file))) problems.push(`${rel}: stylesheet in the site repository; styles belong in MotifSpec`);
-}
-for (const dir of ['layouts', 'content']) {
-  for (const file of walk(join(ROOT, dir))) {
-    if (!['.html', '.md', '.txt', '.xml', '.json'].includes(extname(file))) continue;
-    const rel = relative(ROOT, file);
-    const lines = readFileSync(file, 'utf8').split('\n');
-    lines.forEach((line, i) => {
-      for (const re of [STYLE_ATTR, RAW_COLOR, RAW_UNIT]) {
-        for (const m of line.matchAll(re)) {
-          if (re === RAW_UNIT && /^-?0+(?:\.0+)?[a-z]+$/.test(m[0])) continue;
-          const what = re === STYLE_ATTR ? 'style attribute' : re === RAW_COLOR ? 'raw colour' : 'raw size or duration';
-          problems.push(`${rel}:${i + 1}: ${what} "${m[0].trim()}"`);
-        }
-      }
-    });
-  }
-}
-
-if (problems.length) {
-  console.error(problems.map((p) => `✗ ${p}`).join('\n'));
-  console.error(`${problems.length} problem(s). Use MotifSpec components and tokens instead, or propose an addition to MotifSpec.`);
+let mounts;
+try {
+  mounts = execFileSync('hugo', ['config', 'mounts'], { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
+} catch (e) {
+  console.error(`hugo config mounts failed, so the MotifSpec module couldn't be found:\n${e.stderr || e.message}`);
   process.exit(1);
 }
-console.log('No stylesheets, style attributes, raw colours, sizes or durations in layouts/ or content/.');
+// One JSON object per module, each starting with "{" on its own line; Hugo may print progress lines such as
+// "hugo: downloading modules …" around them. MotifSpec is the module that mounts assets/motifspec (also under a local
+// replacement).
+const modules = mounts.split(/^(?=\{$)/m).filter((c) => c.startsWith('{')).map((c) => JSON.parse(c.slice(0, c.lastIndexOf('}') + 1)));
+const motifspec = modules.find((m) => m.mounts?.some((x) => x.target === 'assets/motifspec'));
+if (!motifspec) {
+  console.error('MotifSpec is not among this site\'s Hugo modules (hugo config mounts).');
+  process.exit(1);
+}
+const checker = join(motifspec.dir, 'scripts', 'check.mjs');
+if (!existsSync(checker)) {
+  console.error(`MotifSpec ${motifspec.version || '(local)'} has no scripts/check.mjs. It ships from v1.12.0.`);
+  process.exit(1);
+}
+try {
+  execFileSync('node', [checker, ROOT], { stdio: 'inherit' });
+} catch (e) {
+  process.exit(e.status ?? 1);
+}
