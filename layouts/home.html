@@ -17,12 +17,12 @@
   {{- with (site.GetPage "/work").RegularPages.ByDate.Reverse }}
   <section class="cx-section" id="work" aria-labelledby="work-title">
     <div class="cx-section__head">
-      {{ partial "section-heading.html" (dict "id" "work" "title" "Selected work") }}
+      {{ partial "motifspec/section-heading.html" (dict "id" "work" "title" "Selected work") }}
       <a class="cx-link" href="{{ (site.GetPage "/work").RelPermalink }}">All work <svg class="cx-icon cx-button__arrow" aria-hidden="true" focusable="false"><use href="#cx-icon-arrow-forward"></use></svg></a>
     </div>
     <ul class="cx-cards">
       {{- range first 3 . }}
-      <li>{{ partial "card.html" (dict "page" . "level" 3) }}</li>
+      <li>{{ partial "motifspec/project-card.html" (dict "page" . "level" 3) }}</li>
       {{- end }}
     </ul>
   </section>
@@ -31,12 +31,12 @@
   {{- with (site.GetPage "/writing").RegularPages.ByDate.Reverse }}
   <section class="cx-section" id="writing" aria-labelledby="writing-title">
     <div class="cx-section__head">
-      {{ partial "section-heading.html" (dict "id" "writing" "title" "Recent writing") }}
+      {{ partial "motifspec/section-heading.html" (dict "id" "writing" "title" "Recent writing") }}
       <a class="cx-link" href="{{ (site.GetPage "/writing").RelPermalink }}">All writing <svg class="cx-icon cx-button__arrow" aria-hidden="true" focusable="false"><use href="#cx-icon-arrow-forward"></use></svg></a>
     </div>
     <ol class="cx-posts" reversed>
       {{- range first 5 . }}
-      {{ partial "post-row.html" (dict "page" . "level" 3) }}
+      {{ partial "motifspec/post-list-item.html" (dict "page" . "level" 3) }}
       {{- end }}
     </ol>
   </section>
@@ -45,7 +45,7 @@
   {{- with .Content }}
   <section class="cx-section" id="capabilities" aria-labelledby="capabilities-title">
     <div class="cx-section__head">
-      {{ partial "section-heading.html" (dict "id" "capabilities" "title" "Capabilities") }}
+      {{ partial "motifspec/section-heading.html" (dict "id" "capabilities" "title" "Capabilities") }}
     </div>
     <div class="cx-prose">
       {{ . }}

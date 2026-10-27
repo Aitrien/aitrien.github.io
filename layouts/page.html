@@ -7,6 +7,6 @@
     <p class="cx-lede">{{ . | plainify }}</p>
     {{- end }}
   </header>
-  {{ partial "article.html" (dict "page" . "toc" "auto") }}
+  {{ partial "motifspec/article.html" (dict "page" . "toc" "auto") }}
 </div>
 {{ end }}

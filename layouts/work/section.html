@@ -9,11 +9,11 @@
     {{- with .Params.intro }}
     <p class="cx-lede">{{ . }}</p>
     {{- end }}
-    {{ partial "tag-filter.html" (dict "section" "work" "current" nil) }}
+    {{ partial "motifspec/tag-filter.html" (dict "section" "work" "current" nil) }}
   </header>
   <ul class="cx-cards">
     {{- range $entries }}
-    <li>{{ partial "card.html" (dict "page" . "level" 2) }}</li>
+    <li>{{ partial "motifspec/project-card.html" (dict "page" . "level" 2) }}</li>
     {{- end }}
   </ul>
 </div>

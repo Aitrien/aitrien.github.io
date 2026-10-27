@@ -3,21 +3,21 @@
 {{ define "main" }}
 <div class="cx-container">
   <header class="cx-page-head">
-    {{ partial "back.html" (dict "href" (site.GetPage "/work").RelPermalink "label" "All work") }}
-    {{ partial "accession/label.html" (dict "page" . "variant" "lead") }}
+    {{ partial "motifspec/back-link.html" (dict "href" (site.GetPage "/work").RelPermalink "label" "All work") }}
+    {{ partial "motifspec/accession/label.html" (dict "page" . "variant" "lead") }}
     <h1>{{ .Title }}</h1>
     <p class="cx-lede">{{ .Summary | plainify }}</p>
   </header>
   <div class="cx-stack">
     {{- with .Params.hero }}
-    {{ partial "figure-image.html" (dict "image" ($.Resources.Get .src) "alt" .alt "caption" (.caption | markdownify) "plate" 1 "eager" true) }}
+    {{ partial "motifspec/figure.html" (dict "image" ($.Resources.Get .src) "alt" .alt "caption" (.caption | markdownify) "plate" 1 "eager" true) }}
     {{- end }}
-    {{ partial "article.html" (dict "page" . "toc" "always") }}
-    {{ partial "accession/label.html" (dict "page" . "variant" "card") }}
+    {{ partial "motifspec/article.html" (dict "page" . "toc" "always") }}
+    {{ partial "motifspec/accession/label.html" (dict "page" . "variant" "card") }}
     {{- with .GetTerms "tags" }}
-    {{ partial "filed-under.html" $ }}
+    {{ partial "motifspec/filed-under.html" $ }}
     {{- end }}
-    {{ partial "pagination.html" (dict "page" . "label" "Case study navigation" "noun" "Entry") }}
+    {{ partial "motifspec/pagination-entries.html" (dict "page" . "label" "Case study navigation" "noun" "Entry") }}
   </div>
 </div>
 {{ end }}
