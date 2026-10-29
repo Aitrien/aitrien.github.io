@@ -7,10 +7,11 @@ role: Sole engineer
 stack: [DTCG tokens, MCP, AWS Lambda, GitHub Actions, Hugo Modules]
 status: live
 tags: [design-systems, accessibility, agentic-coding]
+thumb: thumb.svg
 hero:
-  src: card-states.png
-  alt: Three versions of a horizontal project card for a sample project called Trail conditions map, labelled rest, hover and keyboard focus. Each has a thumbnail placeholder, a catalogue number, year and live status, a title, a one-line summary and three tags. The hover card has a darker border and an underlined title; the focus card has a blue ring around it.
-  caption: Mocked up from one prompt in a new chat. The assistant took the states, borders and focus ring from the specification, not from guesswork.
+  src: hero.png
+  alt: An isometric line drawing of a block with a card-shaped hollow, a fresh card lifting out of it, and four identical cards laid in an arc in front. Every card has the same thumbnail window, two title lines and three tag dots, and the hollow's floor carries the same window. The card lifting out of the block is drawn in green.
+  caption: One mould and the casts taken from it. Every cast carries the same window, lines and pips as the hollow it came from, as every channel carries the same release.
 draft: false
 ---
 
@@ -77,7 +78,9 @@ The server also tells an assistant how to work: read the rules first, build from
 
 ## Outcome
 
-With the server added as a connector, a new chat and the prompt "can you mockup a horizontal project card using MotifSpec styles" produced the cards in Plate 1, with their rest, hover and focus states. The same chat also produced the stacked layout in Plate 3.
+With the server added as a connector, a new chat and the prompt "can you mockup a horizontal project card using MotifSpec styles" produced the cards in Plate 3, with their rest, hover and focus states. The same chat also produced the stacked layout in Plate 4.
+
+![Three versions of a horizontal project card for a sample project called Trail conditions map, labelled rest, hover and keyboard focus. Each has a thumbnail placeholder, a catalogue number, year and live status, a title, a one-line summary and three tags. The hover card has a darker border and an underlined title; the focus card has a blue ring around it.](card-states.png "Mocked up from one prompt in a new chat. The assistant took the states, borders and focus ring from the specification, not from guesswork.")
 
 ![A vertical project card for Trail conditions map, with the thumbnail placeholder above the catalogue number, title, summary and tags.](card-vertical.png "The stacked card from the same chat: the same parts and rules in the other layout.")
 {width="prose"}
@@ -103,3 +106,7 @@ Three problems I hit came from how the pieces were joined rather than from the c
 The Beta status is the next thing to fix, in two parts. First, make checking part of every answer instead of an instruction the assistant can skip: a prototyping prompt on the server that ends by running `check` and shows its result next to the mockup, so whoever reviews it sees any problems straight away. Second, teach the checker the allowed values as well as the allowed classes, so a status, or any other fixed set, that the specification doesn't list fails like an unknown class does.
 
 The next test is the one the system was built for: handing the connector to someone who has never opened the repository, and seeing how far one prompt gets them.
+
+## Credits
+
+The hero is drawn with [Hairline](https://hairline.lucasmarkes.com/) by Lucas Marques, released under the MIT licence, in MotifSpec's colours.
