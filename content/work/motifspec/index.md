@@ -17,6 +17,8 @@ draft: false
 
 MotifSpec is the one place my projects get their colours, type, spacing and components from. It was called brand-codex until version 1.10.0. It ships as a Hugo module and an npm-style package, and every rule in it is written as an instruction, because an AI coding assistant reads it as often as I do.
 
+You can browse it at [motifspec.com](https://motifspec.com), the showcase in Plate 1: its foundations, components, page templates and checks, built from the same files that sites import.
+
 ## Problem
 
 Each new project started by copying CSS from the last one. Values drifted, dark mode was an afterthought, and contrast was checked by eye, if at all. When I asked an assistant to add a page, it invented new colours because nothing told it which ones existed or what they were for.
@@ -68,6 +70,8 @@ Version 1.7.0 is the first tagged release, and this site is the first consumer.
 | Font payload in KB | 88.0 |
 | Releases from 1.0.0 to 1.7.0 | 11 |
 {caption="MotifSpec 1.7.0, then called brand-codex | From npm run build"}
+
+The showcase is now published at [motifspec.com](https://motifspec.com) with every release, alongside the npm package and an MCP server for AI assistants. [MotifSpec MCP server and release pipeline](/work/design-spec-to-prototype/) covers how a release reaches each of them.
 
 ## What I'd change
 
