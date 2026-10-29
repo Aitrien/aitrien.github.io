@@ -1,5 +1,5 @@
 ---
-title: From design spec to compliant prototype
+title: MotifSpec MCP server and release pipeline
 accession: LM-W-006
 date: 2026-10-29
 summary: A release pipeline and hosted MCP server that take MotifSpec's specifications to every project at once, so anyone can prototype in the design system with one prompt and be held to the same rules as production.
@@ -11,7 +11,7 @@ thumb: thumb.svg
 hero:
   src: hero.png
   alt: An isometric line drawing of a block with a card-shaped hollow, a fresh card lifting out of it, and four identical cards laid in an arc in front. Every card has the same thumbnail window, two title lines and three tag dots, and the hollow's floor carries the same window. The card lifting out of the block is drawn in green.
-  caption: One mould and the casts taken from it. Every cast carries the same window, lines and pips as the hollow it came from, as every channel carries the same release.
+  caption: "The specification as a mould: each release is cast once and every channel gets the same copy."
 draft: false
 ---
 
