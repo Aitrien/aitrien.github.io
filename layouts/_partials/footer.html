@@ -1,5 +1,5 @@
 {{- /* site-footer.md, without the optional footer band. The version link names the MotifSpec release this build is
-       pinned to. */ -}}
+       pinned to, and goes to the showcase. */ -}}
 {{- $codex := dict -}}
 {{- with resources.Get "motifspec/tokens.json" }}{{ $codex = . | transform.Unmarshal }}{{ end -}}
 <footer class="cx-footer">
@@ -32,7 +32,7 @@
     <div class="cx-footer__base">
       <span>© {{ now.Year }} {{ site.Title }}</span>
       {{- with $codex.version }}
-      <a class="cx-version" href="{{ $codex.changelog }}" aria-label="Version {{ . }}: view changelog">MotifSpec v{{ . }}<svg class="cx-icon cx-icon--sm" aria-hidden="true" focusable="false"><use href="#cx-icon-arrow-outward"></use></svg><span class="cx-tooltip cx-tooltip--above" aria-hidden="true">View changelog</span></a>
+      <a class="cx-version" href="{{ $codex.showcase }}" aria-label="Version {{ . }}: view the MotifSpec showcase">MotifSpec v{{ . }}<svg class="cx-icon cx-icon--sm" aria-hidden="true" focusable="false"><use href="#cx-icon-arrow-outward"></use></svg><span class="cx-tooltip cx-tooltip--above" aria-hidden="true">View showcase</span></a>
       {{- end }}
       <a href="#top">Back to top<svg class="cx-icon cx-icon--sm" aria-hidden="true" focusable="false"><use href="#cx-icon-arrow-upward"></use></svg></a>
     </div>
