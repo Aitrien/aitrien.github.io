@@ -1,5 +1,5 @@
 ---
-title: From campaign clicks to enrolments
+title: Enrolment funnel reporting in GA4
 accession: LM-W-005
 date: 2026-10-25
 summary: GA4 reporting for Ara that followed prospective students from a campaign link to a completed enrolment, so marketing could see where people dropped out while recruitment was still running.

@@ -1,5 +1,5 @@
 ---
-title: From design spec to compliant prototype
+title: MotifSpec MCP server and release pipeline
 accession: LM-W-006
 date: 2026-10-29
 summary: A release pipeline and hosted MCP server that take MotifSpec's specifications to every project at once, so anyone can prototype in the design system with one prompt and be held to the same rules as production.
