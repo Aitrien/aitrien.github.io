@@ -1,6 +1,6 @@
 ---
 title: About
-intro: I’m interested in how people move through environments. Where they start, what draws them forward, where they get stuck, what makes them stay.
+intro: I’m interested in how people move through digital environments. Where they start, what draws them forward, where they get stuck, what makes them stay.
 outputs: [html]
 build:
   publishResources: false   # only the processed WebP images are published

@@ -4,7 +4,7 @@ aitrien.com is Liam Marshall's portfolio, built on his design system, MotifSpec.
 
 ## Design
 
-Follow MotifSpec's README (Rules for AI assistants) and `docs/hugo.md` at the version pinned in `go.mod`. Read them in the module folder that `hugo config mounts` reports, or on GitHub at that tag.
+Follow MotifSpec's README (Rules for AI assistants) and `docs/hugo.md` at the version pinned in `go.mod`. The MotifSpec MCP server (`.mcp.json`, `.vscode/mcp.json`) serves them, with the components, tokens and checker, for the latest release; when `go.mod` pins an older one, read them in the module folder that `hugo config mounts` reports, or on GitHub at that tag.
 
 When a change needs something MotifSpec doesn't have, stop and say so: it's a MotifSpec release first, then a version update here (`hugo mod get github.com/aitrien/motifspec@vX.Y.Z`). Don't work around it in this repo.
 
