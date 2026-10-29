@@ -4,7 +4,7 @@ accession: LM-W-002
 date: 2026-10-16
 summary: "Sample case study: a design system of DTCG tokens, component rules and generated CSS, written so people and AI assistants can follow it."
 role: Sole engineer
-stack: [DTCG tokens, Node, Hugo Modules]
+stack: [DTCG tokens, Node, Hugo Modules, npm]
 status: live
 tags: [design-systems, design-tokens, accessibility]
 hero:
@@ -15,7 +15,7 @@ aliases: [/work/brand-codex/]
 draft: false
 ---
 
-MotifSpec is the one place my projects get their colours, type, spacing and components from. It was called brand-codex until version 1.10.0. It ships as a Hugo module and an npm-style package, and every rule in it is written as an instruction, because an AI coding assistant reads it as often as I do.
+MotifSpec is the one place my projects get their colours, type, spacing and components from. It was called brand-codex until version 1.10.0. It ships as a Hugo module and an npm package, and every rule in it is written as an instruction, because an AI coding assistant reads it as often as I do.
 
 You can browse it at [motifspec.com](https://motifspec.com), the showcase in Plate 1: its foundations, components, page templates and checks, built from the same files that sites import.
 
@@ -54,24 +54,26 @@ Foreground tokens declare which surfaces they sit on and the ratio they need: se
 
 ### Hugo as the delivery format
 
-The repository is also a Hugo module. Its own configuration mounts the generated files and the fonts, so a site needs one import line and a pinned version. Page templates and render hooks live in the site; the rules for what they output live here.
+The repository is also a Hugo module. Its own configuration mounts the generated files and the fonts, so a site needs one import line and a pinned version. The module also carries a Hugo partial for every component and the render hooks that turn Markdown into figures, tables, code blocks and callouts, so a site writes only its page templates and content. When a partial and its component doc disagree, the doc is the contract: the partial is fixed here, and every site gets the fix with the next release.
+
+Projects that aren't Hugo sites install the same release from npm as `@aitrien/motifspec`, pinned to an exact version.
 
 ## Outcome
 
-Version 1.7.0 is the first tagged release, and this site is the first consumer.
+Version 1.7.0 was the first tagged release, and this site was the first consumer. MotifSpec is now at 1.16.0.
 
 | Measure | Value |
 |---|---|
-| Tokens | 283 |
-| Semantic tokens | 145 |
+| Tokens | 299 |
+| Semantic tokens | 153 |
 | Contrast pairs, each checked in two themes | 95 |
-| Component docs | 19 |
+| Component docs | 20 |
 | Icons in the sprite | 16 |
 | Font payload in KB | 88.0 |
-| Releases from 1.0.0 to 1.7.0 | 11 |
-{caption="MotifSpec 1.7.0, then called brand-codex | From npm run build"}
+| Releases from 1.0.0 to 1.16.0 | 29 |
+{caption="MotifSpec 1.16.0 | From npm run build and the changelog"}
 
-The showcase is now published at [motifspec.com](https://motifspec.com) with every release, alongside the npm package and an MCP server for AI assistants. [MotifSpec MCP server and release pipeline](/work/design-spec-to-prototype/) covers how a release reaches each of them.
+The showcase is published at [motifspec.com](https://motifspec.com) with every release, alongside the npm package and an MCP server for AI assistants. [MotifSpec MCP server and release pipeline](/work/design-spec-to-prototype/) covers how a release reaches each of them.
 
 ## What I'd change
 
