@@ -20,7 +20,9 @@ draft: false
 
 The aim was a system where UX designers work on the design specifications and make sure everything passes accessibility and other standards, while anyone in the development or marketing teams can connect to the hosted specifications and rapidly prototype compliant designs with a single prompt.
 
-A specification only helps if it reaches the people building, at the version they are building against. Before this, MotifSpec reached one site, by hand. Releases were tagged manually, component markup was copied into the site, and the rules lived in files that only someone working in the repository would read. An AI assistant asked to mock something up had nothing to go on, so it made up colours the specification would never allow.
+Before this, a front-end developer building a prototype with an AI assistant worked from design documents uploaded into the chat. There was no standardised way to check the result against them.
+
+I also wanted the method to get better the more it's used. Each gap someone finds becomes a rule or a check in the specification, and the next release gives it to everyone who connects.
 
 ## Constraints
 
@@ -88,10 +90,16 @@ With the server added as a connector, a new chat and the prompt "can you mockup 
 | Showcase | People reading the specification | The live page must name its version |
 {caption="Published from one tag | Every release reaches all four"}
 
+The same response also produced a list of cards, and it shows where the method is still weak. The second card has a "Beta" status in blue. MotifSpec has three statuses, live, building and archived, and the component doc the assistant could read says so. The specification was available; nothing made the assistant follow it.
+
+![Two horizontal project cards under the heading Selected work. The first, Trail conditions map, is marked Live in green; the second, Colourwork chart editor, is marked Beta in blue.](card-list.png "The second card's Beta status isn't in the specification. The assistant made it up, which is exactly what checking should catch.")
+
 ## What I'd change
 
 The MCP server serves the latest release, while a project can pin an older one. If the two differ, an assistant can be offered something the project doesn't have yet. The project's own checker catches that, but a versioned address for each release would stop it happening in the first place.
 
 Three problems I hit came from how the pieces were joined rather than from the code in them. A release was tagged a minute before its changes were merged, which is why releasing is now automatic. Renaming the repository changed the identity GitHub presents to AWS, so the deploy role had to match the new form. And publishing the showcase with GitHub Pages took over the path this site loaded its stylesheet from. Each one is now covered by a check or a comment, and I'd look for that kind of coupling earlier next time.
+
+The Beta status is the next thing to fix, in two parts. First, make checking part of every answer instead of an instruction the assistant can skip: a prototyping prompt on the server that ends by running `check` and shows its result next to the mockup, so whoever reviews it sees any problems straight away. Second, teach the checker the allowed values as well as the allowed classes, so a status, or any other fixed set, that the specification doesn't list fails like an unknown class does.
 
 The next test is the one the system was built for: handing the connector to someone who has never opened the repository, and seeing how far one prompt gets them.
