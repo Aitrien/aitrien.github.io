@@ -14,3 +14,5 @@ github.com/aitrien/motifspec v1.14.2 h1:Fjx20Yg/s37qKxW03rUenAdkK3/YOK/sA/KchEW5
 github.com/aitrien/motifspec v1.14.2/go.mod h1:DJA0ZBfLIbJrmWTF7Bh+Hc0m6bhKagxbcPEofzl9FVU=
 github.com/aitrien/motifspec v1.15.0 h1:u0oyZ/6HQbPBe+qJKBX8Qv0RrUVWqIsRnjzkF7Ck9aw=
 github.com/aitrien/motifspec v1.15.0/go.mod h1:DJA0ZBfLIbJrmWTF7Bh+Hc0m6bhKagxbcPEofzl9FVU=
+github.com/aitrien/motifspec v1.16.0 h1:2MvLtgYluLs4w14KJZSlnnXwVzpkkMuydHmSKF/2P3k=
+github.com/aitrien/motifspec v1.16.0/go.mod h1:DJA0ZBfLIbJrmWTF7Bh+Hc0m6bhKagxbcPEofzl9FVU=
