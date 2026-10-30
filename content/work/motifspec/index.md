@@ -2,7 +2,7 @@
 title: MotifSpec
 accession: LM-W-002
 date: 2026-10-16
-summary: "Sample case study: a design system of DTCG tokens, component rules and generated CSS, written so people and AI assistants can follow it."
+summary: A design system of DTCG tokens, component rules and generated CSS, written so people and AI assistants can follow it.
 role: Sole engineer
 stack: [DTCG tokens, Node, Hugo Modules, npm]
 status: live
