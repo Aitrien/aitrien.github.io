@@ -8,6 +8,19 @@ build:
 
 I'm Liam Marshall, a software engineer working across UX, front-end development, CMS engineering and analytics. The common thread in my work is human-computer interaction: understanding how people use the systems around them, then making those systems easier to navigate.
 
+## Career so far
+
+| Role | Where | Work and results |
+|---|---|---|
+| Software engineer | My own projects | [MotifSpec](/work/motifspec/), [its MCP server and release pipeline](/work/design-spec-to-prototype/), [Pinned planet](/work/pinned-planet/) |
+| Web developer | Ara Institute of Canterbury | [Measurement under consent](/work/measurement-under-consent/), [Enrolment funnel reporting in GA4](/work/campaign-clicks-to-enrolments/), [The slider that moved one subject at a time](/writing/the-slider-that-moved-one-subject/) |
+| Architectural technician | Steve Inwood Builders | Bespoke house plans in Archicad, from clients' requirements |
+| Computer science student | University of Canterbury | Bachelor of Science in Computer Science |
+| Minecraft server | Teens to early twenties | Where the interest started |
+{caption="Most recent first"}
+
+The rest of this page is that path in more detail, starting at the beginning.
+
 ## Designing digital worlds
 
 From my teens into my early twenties, I ran a Minecraft server. I became interested in how players moved from the starting area into the wider world: which touchpoints helped them find their way, where they ran into barriers, what kept them engaged, and what made them come back.
