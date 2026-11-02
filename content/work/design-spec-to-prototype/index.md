@@ -105,6 +105,10 @@ Three problems I hit came from how the pieces were joined rather than from the c
 
 The Beta status is the next thing to fix, in two parts. First, make checking part of every answer instead of an instruction the assistant can skip: a prototyping prompt on the server that ends by running `check` and shows its result next to the mockup, so whoever reviews it sees any problems straight away. Second, teach the checker the allowed values as well as the allowed classes, so a status, or any other fixed set, that the specification doesn't list fails like an unknown class does.
 
+I'd also make it cheaper to use. By a rough count, at about four characters to a token, a card mockup through the server takes 3,000 to 5,000 tokens of lookups, against about 47,000 to upload the same documents into a chat. Two costs hide inside that number. Every tool call makes the assistant read the whole conversation again before its next step, so four calls process it several times over; prompt caching absorbs most of that, but not all. And a broad token search is the most expensive answer the server gives: `find_tokens` for "surface" returns about 2,500 tokens, more than any single component doc.
+
+The fixes are small. `find_tokens` could return names and usage rules, and leave values until they're asked for. The prototyping prompt from the Beta fix could bundle the rules, a component and `check` into one request instead of four. And in a chat, where a preview can't load the hosted stylesheet and the assistant writes the CSS out again from the tokens, the server could hand over just the CSS a component needs, to copy instead of rewrite.
+
 The next test is the one the system was built for: handing the connector to someone who has never opened the repository, and seeing how far one prompt gets them.
 
 ## Credits
