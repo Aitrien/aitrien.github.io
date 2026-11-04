@@ -18,3 +18,7 @@ When a change needs something MotifSpec doesn't have, stop and say so: it's a Mo
 ## Before you finish
 
 Run the checks in `README.md`. CI runs the same on every PR.
+
+## Commits and pull requests
+
+Keep the `Co-Authored-By` line, but don't add a Claude session link to commit messages or pull request descriptions.
