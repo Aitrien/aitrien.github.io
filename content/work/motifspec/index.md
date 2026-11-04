@@ -5,7 +5,7 @@ date: 2026-10-16
 summary: A design system of DTCG tokens, component rules and generated CSS, written so people and AI assistants can follow it.
 role: Sole engineer
 stack: [DTCG tokens, Node, Hugo Modules, npm]
-status: live
+status: building
 tags: [design-systems, design-tokens, accessibility]
 hero:
   src: showcase.png
