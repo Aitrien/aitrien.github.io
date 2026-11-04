@@ -11,7 +11,7 @@ When a change needs something MotifSpec doesn't have, stop and say so: it's a Mo
 ## Content
 
 - Case studies are page bundles in `content/work/`, posts in `content/writing/`, with their images beside `index.md`.
-- Page structure, catalogue numbers and front matter are in MotifSpec's `docs/templates.md` and `docs/hugo.md`.
+- The site uses MotifSpec's portfolio layout, declared in `hugo.toml`. Page structure and catalogue numbers are in MotifSpec's `docs/layouts/portfolio.md`, and front matter in its `docs/hugo.md`.
 - It's Liam's own work and experience. Don't invent facts, figures, outcomes, quotes or credits; ask.
 - Use New Zealand English spelling (colour, organise, enrolment).
 
