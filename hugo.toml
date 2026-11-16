@@ -10,6 +10,7 @@ disableKinds = ["taxonomy"]
   role = "Software engineer"
   description = "Liam Marshall is a software engineer who designs applications around the people moving through them. Case studies and writing on web platforms, analytics, design systems and accessibility."
   github = "https://github.com/Aitrien"
+  linkedin = "https://www.linkedin.com/in/l-marshall/"
 
 # MotifSpec checks the site against this layout (docs/layouts/portfolio.md).
 [params.motifspec]

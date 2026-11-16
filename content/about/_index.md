@@ -50,4 +50,4 @@ I enjoyed working across these boundaries: from the way an interface was organis
 
 I build applications and the systems behind them, designed around the people who use them. This site is built from [MotifSpec](/work/motifspec/), my own design system, so every page here is also a test of it. You can see the rest of my work in [Work](/work/), and read about how I approach it in [Writing](/writing/).
 
-My code is on [GitHub](https://github.com/Aitrien).
+My code is on [GitHub](https://github.com/Aitrien), and I'm on [LinkedIn](https://www.linkedin.com/in/l-marshall/).
