@@ -73,7 +73,7 @@ Version 1.7.0 was the first tagged release, and this site was the first consumer
 | Releases from 1.0.0 to 1.16.0 | 29 |
 {caption="MotifSpec 1.16.0 | From npm run build and the changelog"}
 
-The showcase is published at [motifspec.com](https://motifspec.com) with every release, alongside the npm package and an MCP server for AI assistants. [MotifSpec MCP server and release pipeline](/work/design-spec-to-prototype/) covers how a release reaches each of them.
+The showcase is published at [motifspec.com](https://motifspec.com) with every release, alongside the npm package and an MCP server for AI assistants. [Connecting Brand Guidelines and Design Systems to AI](/work/design-spec-to-prototype/) covers how a release reaches each of them.
 
 ## What I'd change
 
