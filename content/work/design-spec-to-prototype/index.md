@@ -10,8 +10,8 @@ tags: [design-systems, accessibility, agentic-coding]
 thumb: thumb.svg
 hero:
   src: hero.png
-  alt: An isometric line drawing of a block with a card-shaped hollow, a fresh card lifting out of it, and four identical cards laid in an arc in front. Every card has the same thumbnail window, two title lines and three tag dots, and the hollow's floor carries the same window. The card lifting out of the block is drawn in green.
-  caption: "The specification as a mould: each release is cast once and every channel gets the same copy."
+  alt: An isometric line drawing of a plate with three recesses cut into its top, shaped like a card, a text field and a button. The card, drawn in green, hangs squared up just above its recess, ready to drop in. The field and the button lie loose and askew in front of the plate.
+  caption: "The specification as a jig: every part has a place cut for it, so an agent sets it in square instead of shaping a new one each time."
 draft: false
 ---
 
